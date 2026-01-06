@@ -8,16 +8,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import type { NavItem } from '@/types/content';
+import { useLocale } from '@/context/LocaleContext';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
-interface HeaderProps {
-  logo?: string;
-  navigation: NavItem[];
-}
-
-export function Header({ logo = 'Orbweb', navigation }: HeaderProps) {
+export function Header() {
+  const { content } = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const navigation = [
+    { label: content.nav.features, href: '#features-intro' },
+    { label: content.nav.privacy, href: '#privacy' },
+    { label: content.nav.ai, href: '#ai-intro' },
+    { label: content.nav.faq, href: '#faq' },
+    { label: content.nav.download, href: '#download' },
+  ];
   
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +54,7 @@ export function Header({ logo = 'Orbweb', navigation }: HeaderProps) {
             href="/" 
             className="text-white font-semibold text-[18px] hover:opacity-80 transition-opacity"
           >
-            {logo}
+            OrbNote
           </Link>
           
           {/* Desktop Navigation */}
@@ -63,31 +68,37 @@ export function Header({ logo = 'Orbweb', navigation }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
+            
+            {/* 语言切换器 */}
+            <LanguageSwitcher />
           </div>
           
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg 
-              width="18" 
-              height="18" 
-              viewBox="0 0 18 18" 
-              fill="currentColor"
+          {/* Mobile: 语言切换 + 菜单按钮 */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              className="text-white p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <path d="M4.5 4.5l9 9m0-9l-9 9" stroke="currentColor" strokeWidth="1.5" fill="none" />
-              ) : (
-                <>
-                  <rect y="4" width="18" height="1.5" rx="0.75" />
-                  <rect y="8.5" width="18" height="1.5" rx="0.75" />
-                  <rect y="13" width="18" height="1.5" rx="0.75" />
-                </>
-              )}
-            </svg>
-          </button>
+              <svg 
+                width="18" 
+                height="18" 
+                viewBox="0 0 18 18" 
+                fill="currentColor"
+              >
+                {isMobileMenuOpen ? (
+                  <path d="M4.5 4.5l9 9m0-9l-9 9" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                ) : (
+                  <>
+                    <rect y="4" width="18" height="1.5" rx="0.75" />
+                    <rect y="8.5" width="18" height="1.5" rx="0.75" />
+                    <rect y="13" width="18" height="1.5" rx="0.75" />
+                  </>
+                )}
+              </svg>
+            </button>
+          </div>
         </nav>
       </motion.header>
       
@@ -137,4 +148,3 @@ export function Header({ logo = 'Orbweb', navigation }: HeaderProps) {
     </>
   );
 }
-

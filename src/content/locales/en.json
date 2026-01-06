@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "OrbNote - Your Intelligent Conversational Notebook",
+    "description": "Capture ideas instantly. Your data stays absolutely private. Built on Apple native technology for deep recording and lasting privacy.",
+    "keywords": [
+      "OrbNote",
+      "notes",
+      "privacy",
+      "iCloud",
+      "Apple",
+      "end-to-end encryption",
+      "conversational notes"
+    ]
+  },
+  "sections": {
+    "hero": {
+      "title": "Your Intelligent\nConversational Notebook",
+      "subtitle": "OrbNote",
+      "description": "Capture ideas instantly. Your data stays absolutely private. Built on Apple native technology for deep recording and lasting privacy.",
+      "links": [
+        {
+          "text": "Download on App Store"
+        },
+        {
+          "text": "Learn More"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "🔒 Privacy First",
+      "title": "Your Data Should Be Yours to Control",
+      "description": "OrbNote follows a \"local-first + user-owned cloud\" philosophy. We don't run any backend servers, which means we simply cannot see any of your notes."
+    },
+    "privacy-e2ee": {
+      "eyebrow": "End-to-End Encryption",
+      "title": "E2EE Deeply Integrated with Apple CloudKit",
+      "description": "Leveraging iCloud's Advanced Data Protection, your content is end-to-end encrypted during both transmission and storage. Only your own devices can decrypt the content—not even Apple or us can read it.",
+      "links": [
+        {
+          "text": "Learn about iCloud Advanced Data Protection"
+        }
+      ]
+    },
+    "privacy-icloud": {
+      "eyebrow": "Total Transparency",
+      "title": "Uses Your iCloud Storage",
+      "description": "To ensure a pristine privacy environment, OrbNote directly uses your personal iCloud storage. We don't charge \"storage fees\"—all media attachments use your own iCloud quota."
+    },
+    "privacy-ownership": {
+      "eyebrow": "No Data Lock-in",
+      "title": "Data Ownership That's Forever Yours",
+      "description": "Since your data lives in your iCloud, you maintain absolute ownership at all times. No need to worry about losing data if the app ever shuts down."
+    },
+    "features-intro": {
+      "eyebrow": "📝 Deep Recording",
+      "title": "From Quick Thoughts to Epic Writings",
+      "description": "A conversational interface that feels like chatting. The timeline layout makes capturing ideas effortless, with support for replies, reactions, and quotes."
+    },
+    "showcase": {
+      "eyebrow": "🍎 Capture Across Apple Ecosystem",
+      "title": "Mac · iPhone · iPad · Watch",
+      "description": "Wherever you are, whatever device you're on, capture your ideas in an instant.",
+      "items": {
+        "macos": {
+          "title": "macOS",
+          "description": "Even without opening the main app, summon a floating window with a global shortcut, auto-listen to clipboard, and save instantly."
+        },
+        "ios": {
+          "title": "iOS / iPadOS",
+          "description": "Deep integration with Share Sheet and Shortcuts for automated capture workflows."
+        },
+        "watchos": {
+          "title": "watchOS",
+          "description": "Raise your wrist and record. Voice input supported. Your idea is on your Mac the next second."
+        }
+      }
+    },
+    "longtext": {
+      "eyebrow": "Long-form Support",
+      "title": "Who Said Chat Boxes Are Only for Short Messages?",
+      "description": "OrbNote natively supports long-form text entry and management. Use it as a long-form editor with article management mode to keep deep content organized."
+    },
+    "ai-intro": {
+      "eyebrow": "🤖 On-Device AI",
+      "title": "Smart, But Never Overstepping",
+      "description": "We leverage Apple's on-device Neural Engine instead of sending your data to the cloud for processing."
+    },
+    "ai-features": {
+      "eyebrow": "Local Intelligence",
+      "title": "AI Features at a Glance",
+      "description": "All AI processing happens on-device. Your data never leaves your device.",
+      "items": {
+        "ai-gallery": {
+          "title": "Smart Gallery",
+          "description": "Automatically recognizes image content and generates searchable tags."
+        },
+        "ai-voice": {
+          "title": "Voice to Text (Pro)",
+          "description": "Voice messages auto-transcribed, turning your spoken ideas into searchable text."
+        },
+        "ai-search": {
+          "title": "Advanced Global Search",
+          "description": "Search beyond text—find OCR text in images and content in PDFs effortlessly."
+        }
+      }
+    },
+    "specs": {
+      "eyebrow": "Tech Specs",
+      "title": "Under the Hood",
+      "body": [
+        "Storage: Local Core Data + iCloud CloudKit",
+        "Encryption: Apple iCloud End-to-End Encryption",
+        "Framework: Swift 5.9 / SwiftUI (100% Native)",
+        "Languages: 简体中文 / English / 日本語 / 한국어"
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently Asked Questions",
+      "body": [
+        "Q: Why does OrbNote use my iCloud storage?",
+        "A: Because we don't store your data. For ultimate privacy, we hand sync control back to you. This means you don't need to pay extra subscription fees for \"cloud storage\"—just use your existing iCloud space.",
+        "Q: What if my iCloud storage is full?",
+        "A: OrbNote will show a sync failure notice. You can free up iCloud space or upgrade your Apple storage plan. Your local data remains safe—it just won't sync to other devices."
+      ]
+    },
+    "cta": {
+      "title": "Get Started with OrbNote",
+      "description": "Download free on the App Store and begin your private note-taking journey.",
+      "links": [
+        {
+          "text": "Download on App Store"
+        },
+        {
+          "text": "View Pricing"
+        }
+      ]
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "privacy": "Privacy",
+    "ai": "AI",
+    "faq": "FAQ",
+    "download": "Download"
+  },
+  "footer": {
+    "copyright": "Copyright © 2024 OrbNote. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "support": "Support",
+    "contact": "Contact Us"
+  }
+}

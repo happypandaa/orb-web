@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { HeroSection as HeroSectionType } from '@/types/content';
-import { fadeInUp, scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
+import { scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface HeroSectionProps {
   data: HeroSectionType;
@@ -20,55 +20,28 @@ export function HeroSection({ data }: HeroSectionProps) {
   
   const isDark = theme === 'dark';
   
+  // 获取背景样式
+  const getThemeClasses = () => {
+    switch (theme) {
+      case 'dark':
+        return 'bg-black text-white';
+      case 'gray':
+        return 'bg-[#f5f5f7] text-[#1d1d1f]';
+      default:
+        return 'bg-white text-[#1d1d1f]';
+    }
+  };
+  
   return (
     <section 
       className={`
-        relative min-h-screen flex items-center justify-center overflow-hidden
-        ${isDark ? 'bg-black text-white' : 'bg-[#fafafa] text-[#1d1d1f]'}
+        relative min-h-screen flex flex-col items-center justify-center overflow-hidden
+        ${getThemeClasses()}
       `}
     >
-      {/* 背景媒体 */}
-      {media && (
-        <motion.div 
-          className="absolute inset-0 z-0"
-          initial="hidden"
-          animate="visible"
-          variants={scaleIn}
-        >
-          {media.type === 'image' && (
-            <Image
-              src={media.src}
-              alt={media.alt || ''}
-              fill
-              className="object-cover"
-              priority
-            />
-          )}
-          {media.type === 'video' && (
-            <video
-              src={media.src}
-              poster={media.poster}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          )}
-          {/* 渐变遮罩 */}
-          <div className={`
-            absolute inset-0 
-            ${isDark 
-              ? 'bg-gradient-to-b from-black/60 via-black/30 to-black/80' 
-              : 'bg-gradient-to-b from-white/60 via-white/30 to-white/80'
-            }
-          `} />
-        </motion.div>
-      )}
-      
       {/* 内容区域 */}
       <motion.div 
-        className="relative z-10 section-container text-center py-20"
+        className="relative z-10 section-container text-center pt-20 pb-6"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -90,6 +63,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         <motion.h1 
           className="headline-super mb-6"
           variants={staggerItem}
+          style={{ whiteSpace: 'pre-line' }}
         >
           {title}
         </motion.h1>
@@ -110,7 +84,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         {/* 按钮/链接 */}
         {links && links.length > 0 && (
           <motion.div 
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="flex flex-wrap items-center justify-center gap-4 mb-12"
             variants={staggerItem}
           >
             {links.map((link, index) => (
@@ -144,6 +118,38 @@ export function HeroSection({ data }: HeroSectionProps) {
         )}
       </motion.div>
       
+      {/* 产品展示图片 - 放在标题下方 */}
+      {media && (
+        <motion.div 
+          className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-10"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
+          {media.type === 'image' && (
+            <Image
+              src={media.src}
+              alt={media.alt || ''}
+              width={media.width || 1200}
+              height={media.height || 800}
+              className="w-full h-auto"
+              priority
+            />
+          )}
+          {media.type === 'video' && (
+            <video
+              src={media.src}
+              poster={media.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto rounded-2xl"
+            />
+          )}
+        </motion.div>
+      )}
+      
       {/* 滚动提示 */}
       <motion.div 
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
@@ -164,4 +170,3 @@ export function HeroSection({ data }: HeroSectionProps) {
     </section>
   );
 }
-

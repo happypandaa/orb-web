@@ -9,10 +9,22 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FeatureSection as FeatureSectionType } from '@/types/content';
-import { fadeInUp, fadeInLeft, fadeInRight, scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
+import { fadeInLeft, fadeInRight, scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface FeatureSectionProps {
   data: FeatureSectionType;
+}
+
+// 获取背景样式
+function getThemeClasses(theme: string) {
+  switch (theme) {
+    case 'dark':
+      return 'bg-black text-white';
+    case 'gray':
+      return 'bg-[#f5f5f7] text-[#1d1d1f]';
+    default:
+      return 'bg-white text-[#1d1d1f]';
+  }
 }
 
 export function FeatureSection({ data }: FeatureSectionProps) {
@@ -27,16 +39,12 @@ export function FeatureSection({ data }: FeatureSectionProps) {
   } = data;
   
   const isDark = theme === 'dark';
+  const themeClasses = getThemeClasses(theme);
   
   // 居中布局
   if (layout === 'center') {
     return (
-      <section 
-        className={`
-          py-[var(--section-padding)]
-          ${isDark ? 'bg-black text-white' : 'bg-[#fafafa] text-[#1d1d1f]'}
-        `}
-      >
+      <section className={`py-[var(--section-padding)] ${themeClasses}`}>
         <motion.div 
           className="section-container text-center"
           initial="hidden"
@@ -56,7 +64,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           
           {/* 标题 */}
           <motion.h2 
-            className="headline-secondary mb-6"
+            className="headline-secondary mb-4"
             variants={staggerItem}
           >
             {title}
@@ -66,7 +74,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           {description && (
             <motion.p 
               className={`
-                body-large max-w-3xl mx-auto mb-10
+                body-large max-w-3xl mx-auto mb-6
                 ${isDark ? 'text-white/70' : 'text-[#86868b]'}
               `}
               variants={staggerItem}
@@ -78,7 +86,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           {/* 媒体 */}
           {media && (
             <motion.div 
-              className="mt-12 rounded-2xl overflow-hidden"
+              className="mt-8 rounded-2xl overflow-hidden"
               variants={scaleIn}
             >
               {media.type === 'image' && (
@@ -107,7 +115,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           {/* 链接 */}
           {links && links.length > 0 && (
             <motion.div 
-              className="flex flex-wrap items-center justify-center gap-6 mt-10"
+              className="flex flex-wrap items-center justify-center gap-6 mt-6"
               variants={staggerItem}
             >
               {links.map((link, index) => (
@@ -131,15 +139,10 @@ export function FeatureSection({ data }: FeatureSectionProps) {
   const isLeft = layout === 'left';
   
   return (
-    <section 
-      className={`
-        py-[var(--section-padding)]
-        ${isDark ? 'bg-black text-white' : 'bg-[#fafafa] text-[#1d1d1f]'}
-      `}
-    >
+    <section className={`py-[var(--section-padding)] ${themeClasses}`}>
       <div className="section-container section-container-wide">
         <div className={`
-          grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center
+          grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center
           ${isLeft ? '' : 'lg:flex-row-reverse'}
         `}>
           {/* 文字内容 */}
@@ -235,4 +238,3 @@ export function FeatureSection({ data }: FeatureSectionProps) {
     </section>
   );
 }
-

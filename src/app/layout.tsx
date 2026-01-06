@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LocaleProvider } from "@/context/LocaleContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import siteConfig from "@/content/site.json";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,15 +23,11 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
-        <Header 
-          logo={siteConfig.name} 
-          navigation={siteConfig.navigation} 
-        />
-        <main>{children}</main>
-        <Footer 
-          copyright={siteConfig.footer.copyright}
-          links={siteConfig.footer.links}
-        />
+        <LocaleProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

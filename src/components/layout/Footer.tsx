@@ -6,14 +6,18 @@
  */
 
 import Link from 'next/link';
-import type { NavItem } from '@/types/content';
+import { useLocale } from '@/context/LocaleContext';
 
-interface FooterProps {
-  copyright: string;
-  links: NavItem[];
-}
+export function Footer() {
+  const { content } = useLocale();
+  
+  const links = [
+    { label: content.footer.privacy, href: '/privacy' },
+    { label: content.footer.terms, href: '/terms' },
+    { label: content.footer.support, href: '/support' },
+    { label: content.footer.contact, href: '/contact' },
+  ];
 
-export function Footer({ copyright, links }: FooterProps) {
   return (
     <footer className="bg-[#f5f5f7] border-t border-[#d2d2d7]">
       <div className="max-w-[980px] mx-auto px-6 py-5">
@@ -32,10 +36,9 @@ export function Footer({ copyright, links }: FooterProps) {
         
         {/* 版权信息 */}
         <p className="text-[12px] text-[#86868b] text-center">
-          {copyright}
+          {content.footer.copyright}
         </p>
       </div>
     </footer>
   );
 }
-

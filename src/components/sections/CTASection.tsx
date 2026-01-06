@@ -38,7 +38,7 @@ export function CTASection({ data }: CTASectionProps) {
       >
         {/* 标题 */}
         <motion.h2 
-          className="headline-secondary mb-6"
+          className="headline-secondary mb-4"
           variants={staggerItem}
         >
           {title}
@@ -48,7 +48,7 @@ export function CTASection({ data }: CTASectionProps) {
         {description && (
           <motion.p 
             className={`
-              body-large max-w-2xl mx-auto mb-10
+              body-large max-w-2xl mx-auto mb-6
               ${isDark ? 'text-white/70' : 'text-[#86868b]'}
             `}
             variants={staggerItem}

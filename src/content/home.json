@@ -11,19 +11,18 @@
       "title": "你的智能\n对话式笔记本",
       "subtitle": "OrbNote",
       "description": "灵感随手即记，数据绝对私有。基于 Apple 原生技术，为深度记录与长效隐私而生。",
+      "media": {
+        "type": "image",
+        "src": "/images/platform.png",
+        "alt": "OrbNote 在 Mac、iPhone、iPad 上的展示",
+        "width": 1200,
+        "height": 800
+      },
       "links": [
-        {
-          "text": "App Store 下载",
-          "href": "#download",
-          "variant": "primary"
-        },
-        {
-          "text": "了解更多",
-          "href": "#privacy",
-          "variant": "secondary"
-        }
+        { "text": "App Store 下载", "href": "#download", "variant": "primary" },
+        { "text": "了解更多", "href": "#privacy", "variant": "secondary" }
       ],
-      "theme": "dark"
+      "theme": "light"
     },
     {
       "id": "privacy",
@@ -32,7 +31,7 @@
       "title": "你的数据，本应由你掌控",
       "description": "OrbNote 坚持「本地优先 + 用户私有云」的设计理念，我们不运行任何后端服务器，这意味着我们无法看到你的任何一条笔记。",
       "layout": "center",
-      "theme": "light"
+      "theme": "gray"
     },
     {
       "id": "privacy-e2ee",
@@ -48,11 +47,7 @@
         "height": 600
       },
       "links": [
-        {
-          "text": "了解 iCloud 高级数据保护",
-          "href": "https://support.apple.com/zh-cn/HT212520",
-          "variant": "text"
-        }
+        { "text": "了解 iCloud 高级数据保护", "href": "https://support.apple.com/zh-cn/HT212520", "variant": "text" }
       ],
       "layout": "left",
       "theme": "light"
@@ -71,7 +66,7 @@
         "height": 600
       },
       "layout": "right",
-      "theme": "light"
+      "theme": "gray"
     },
     {
       "id": "privacy-ownership",
@@ -109,37 +104,19 @@
           "id": "macos",
           "title": "macOS",
           "description": "即使不打开主程序，也能通过全局快捷键呼出悬浮窗，自动监听剪贴板，瞬间保存。",
-          "media": {
-            "type": "image",
-            "src": "/images/platform-mac.svg",
-            "alt": "macOS 应用",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/platform-mac.svg", "alt": "macOS 应用", "width": 600, "height": 450 }
         },
         {
           "id": "ios",
           "title": "iOS / iPadOS",
           "description": "深度集成系统分享面板（Share Sheet），通过捷径（Shortcuts）实现自动化采集。",
-          "media": {
-            "type": "image",
-            "src": "/images/platform-ios.svg",
-            "alt": "iOS 应用",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/platform-ios.svg", "alt": "iOS 应用", "width": 600, "height": 450 }
         },
         {
           "id": "watchos",
           "title": "watchOS",
           "description": "抬腕即记，支持语音录入。此时此刻的灵感，下一秒就在你的 Mac 上。",
-          "media": {
-            "type": "image",
-            "src": "/images/platform-watch.svg",
-            "alt": "watchOS 应用",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/platform-watch.svg", "alt": "watchOS 应用", "width": 600, "height": 450 }
         }
       ],
       "theme": "light"
@@ -158,7 +135,7 @@
         "height": 600
       },
       "layout": "right",
-      "theme": "light"
+      "theme": "gray"
     },
     {
       "id": "ai-intro",
@@ -180,40 +157,22 @@
           "id": "ai-gallery",
           "title": "智能图库管理",
           "description": "自动识别图片内容并生成搜索标签，让图片也能被轻松检索。",
-          "media": {
-            "type": "image",
-            "src": "/images/ai-gallery.svg",
-            "alt": "智能图库",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/ai-gallery.svg", "alt": "智能图库", "width": 600, "height": 450 }
         },
         {
           "id": "ai-voice",
           "title": "语音转文字 (Pro)",
           "description": "语音消息自动转写，让你的口述灵感变成可搜索的文字。",
-          "media": {
-            "type": "image",
-            "src": "/images/ai-voice.svg",
-            "alt": "语音转文字",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/ai-voice.svg", "alt": "语音转文字", "width": 600, "height": 450 }
         },
         {
           "id": "ai-search",
           "title": "高级全局检索",
           "description": "搜索不仅仅限于文字，连图片里的 OCR 文字和 PDF 内容都能轻松搜到。",
-          "media": {
-            "type": "image",
-            "src": "/images/ai-search.svg",
-            "alt": "全局检索",
-            "width": 600,
-            "height": 450
-          }
+          "media": { "type": "image", "src": "/images/ai-search.svg", "alt": "全局检索", "width": 600, "height": 450 }
         }
       ],
-      "theme": "light"
+      "theme": "gray"
     },
     {
       "id": "specs",
@@ -239,7 +198,7 @@
         "Q: 如果我的 iCloud 空间满了怎么办？",
         "A: OrbNote 会提示同步失败。你可以清理 iCloud 空间或升级 Apple 的存储计划。你的本地数据依然安全，只是无法同步到其他设备。"
       ],
-      "theme": "light"
+      "theme": "gray"
     },
     {
       "id": "cta",
@@ -247,16 +206,8 @@
       "title": "开始使用 OrbNote",
       "description": "在 App Store 免费下载，开启你的私密笔记之旅。",
       "links": [
-        {
-          "text": "App Store 下载",
-          "href": "#download",
-          "variant": "primary"
-        },
-        {
-          "text": "查看定价",
-          "href": "#pricing",
-          "variant": "secondary"
-        }
+        { "text": "App Store 下载", "href": "#download", "variant": "primary" },
+        { "text": "查看定价", "href": "#pricing", "variant": "secondary" }
       ],
       "theme": "dark"
     }

@@ -78,7 +78,7 @@ export function StatsSection({ data }: StatsSectionProps) {
         {/* 标题 */}
         {title && (
           <motion.h2 
-            className="headline-secondary text-center mb-16"
+            className="headline-secondary text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -90,7 +90,7 @@ export function StatsSection({ data }: StatsSectionProps) {
         
         {/* 统计数据 */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "OrbNote - 당신의 지능형 대화식 노트",
+    "description": "아이디어를 순식간에 캡처. 데이터는 완전히 비공개. Apple 네이티브 기술로 깊은 기록과 영구적인 프라이버시를 실현.",
+    "keywords": [
+      "OrbNote",
+      "노트",
+      "프라이버시",
+      "iCloud",
+      "Apple",
+      "종단간 암호화",
+      "대화식 노트"
+    ]
+  },
+  "sections": {
+    "hero": {
+      "title": "당신의 지능형\n대화식 노트",
+      "subtitle": "OrbNote",
+      "description": "아이디어를 순식간에 캡처. 데이터는 완전히 비공개. Apple 네이티브 기술로 깊은 기록과 영구적인 프라이버시를 실현.",
+      "links": [
+        {
+          "text": "App Store에서 다운로드"
+        },
+        {
+          "text": "자세히 알아보기"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "🔒 프라이버시 최우선",
+      "title": "당신의 데이터는 당신이 관리해야 합니다",
+      "description": "OrbNote는 '로컬 우선 + 사용자 소유 클라우드' 철학을 고수합니다. 백엔드 서버를 운영하지 않기 때문에, 우리는 당신의 노트를 볼 수 없습니다."
+    },
+    "privacy-e2ee": {
+      "eyebrow": "종단간 암호화",
+      "title": "E2EE Apple CloudKit과 깊은 통합",
+      "description": "iCloud의 고급 데이터 보호를 활용하여 전송 및 저장 시 모두 종단간 암호화됩니다. 오직 당신의 기기만이 콘텐츠를 복호화할 수 있습니다—Apple이나 저희도 읽을 수 없습니다.",
+      "links": [
+        {
+          "text": "iCloud 고급 데이터 보호 알아보기"
+        }
+      ]
+    },
+    "privacy-icloud": {
+      "eyebrow": "완전한 투명성",
+      "title": "당신의 iCloud 저장 공간 사용",
+      "description": "순수한 프라이버시 환경을 보장하기 위해, OrbNote는 당신의 개인 iCloud 저장 공간을 직접 사용합니다. '저장 공간 비용'은 없습니다—모든 미디어 첨부 파일은 당신의 iCloud 할당량을 사용합니다."
+    },
+    "privacy-ownership": {
+      "eyebrow": "데이터 종속 없음",
+      "title": "데이터 소유권은 영원히 당신의 것",
+      "description": "데이터가 당신의 iCloud에 있기 때문에, 언제든지 절대적인 소유권을 유지합니다. 앱이 종료되어도 데이터를 잃을 걱정이 없습니다."
+    },
+    "features-intro": {
+      "eyebrow": "📝 깊은 기록",
+      "title": "순간의 아이디어부터 대작까지",
+      "description": "채팅하듯 자연스러운 대화형 인터페이스. 타임라인 형식의 레이아웃으로 아이디어 캡처가 스트레스 없이. 답장, 리액션, 인용 지원."
+    },
+    "showcase": {
+      "eyebrow": "🍎 Apple 생태계 전체에서 캡처",
+      "title": "Mac · iPhone · iPad · Watch",
+      "description": "어디에 있든, 어떤 기기를 사용하든, 아이디어를 순식간에 캡처.",
+      "items": {
+        "macos": {
+          "title": "macOS",
+          "description": "메인 앱을 열지 않아도 글로벌 단축키로 플로팅 창을 불러오고, 클립보드를 자동 감시하여 즉시 저장."
+        },
+        "ios": {
+          "title": "iOS / iPadOS",
+          "description": "공유 시트와 단축어와의 깊은 통합으로 자동화된 캡처 워크플로우 실현."
+        },
+        "watchos": {
+          "title": "watchOS",
+          "description": "손목을 들어 기록. 음성 입력 지원. 지금 이 순간의 아이디어가 다음 순간에는 Mac에."
+        }
+      }
+    },
+    "longtext": {
+      "eyebrow": "긴 글 지원",
+      "title": "채팅창은 짧은 메시지만?",
+      "description": "OrbNote는 긴 글 텍스트 입력과 관리를 네이티브 지원. 글 관리 모드와 결합하여 깊은 콘텐츠도 정리 정돈."
+    },
+    "ai-intro": {
+      "eyebrow": "🤖 온디바이스 AI",
+      "title": "똑똑하게, 하지만 선을 넘지 않게",
+      "description": "데이터를 클라우드로 보내는 대신 Apple 기기의 Neural Engine을 활용."
+    },
+    "ai-features": {
+      "eyebrow": "로컬 인텔리전스",
+      "title": "AI 기능 한눈에",
+      "description": "모든 AI 처리는 기기에서 완료. 당신의 데이터는 기기를 떠나지 않습니다.",
+      "items": {
+        "ai-gallery": {
+          "title": "스마트 갤러리",
+          "description": "이미지 콘텐츠를 자동 인식하고 검색 가능한 태그 생성."
+        },
+        "ai-voice": {
+          "title": "음성 텍스트 변환 (Pro)",
+          "description": "음성 메시지 자동 전사. 말한 아이디어를 검색 가능한 텍스트로."
+        },
+        "ai-search": {
+          "title": "고급 글로벌 검색",
+          "description": "텍스트를 넘어선 검색—이미지 내 OCR 텍스트와 PDF 콘텐츠도 쉽게 검색."
+        }
+      }
+    },
+    "specs": {
+      "eyebrow": "기술 사양",
+      "title": "내부 구조",
+      "body": [
+        "저장소: 로컬 Core Data + iCloud CloudKit",
+        "암호화: Apple iCloud 종단간 암호화",
+        "프레임워크: Swift 5.9 / SwiftUI (100% 네이티브)",
+        "언어: 简体中文 / English / 日本語 / 한국어"
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "자주 묻는 질문",
+      "body": [
+        "Q: 왜 OrbNote는 제 iCloud 저장 공간을 사용하나요?",
+        "A: 우리는 당신의 데이터를 저장하지 않기 때문입니다. 궁극의 프라이버시를 위해, 동기화 제어를 당신에게 맡깁니다. 이는 '클라우드 저장소'를 위한 추가 구독료가 필요 없고, 기존 iCloud 공간만 사용하면 된다는 것을 의미합니다.",
+        "Q: iCloud 저장 공간이 가득 차면 어떻게 되나요?",
+        "A: OrbNote는 동기화 실패 알림을 표시합니다. iCloud 공간을 정리하거나 Apple 저장 공간 플랜을 업그레이드할 수 있습니다. 로컬 데이터는 안전하게 유지됩니다—다른 기기로 동기화되지 않을 뿐입니다."
+      ]
+    },
+    "cta": {
+      "title": "OrbNote 시작하기",
+      "description": "App Store에서 무료 다운로드. 프라이빗한 노트 여정을 시작하세요.",
+      "links": [
+        {
+          "text": "App Store에서 다운로드"
+        },
+        {
+          "text": "가격 보기"
+        }
+      ]
+    }
+  },
+  "nav": {
+    "features": "기능",
+    "privacy": "프라이버시",
+    "ai": "AI",
+    "faq": "FAQ",
+    "download": "다운로드"
+  },
+  "footer": {
+    "copyright": "Copyright © 2024 OrbNote. All rights reserved.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "support": "지원",
+    "contact": "문의하기"
+  }
+}

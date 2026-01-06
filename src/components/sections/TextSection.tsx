@@ -14,19 +14,27 @@ interface TextSectionProps {
   data: TextSectionType;
 }
 
+// 获取背景样式
+function getThemeClasses(theme: string) {
+  switch (theme) {
+    case 'dark':
+      return 'bg-[#1d1d1f] text-white';
+    case 'gray':
+      return 'bg-[#f5f5f7] text-[#1d1d1f]';
+    default:
+      return 'bg-white text-[#1d1d1f]';
+  }
+}
+
 export function TextSection({ data }: TextSectionProps) {
   const { eyebrow, title, body, links, theme = 'light' } = data;
   
   const isDark = theme === 'dark';
+  const themeClasses = getThemeClasses(theme);
   const paragraphs = Array.isArray(body) ? body : [body];
   
   return (
-    <section 
-      className={`
-        py-[var(--section-padding)]
-        ${isDark ? 'bg-[#1d1d1f] text-white' : 'bg-white text-[#1d1d1f]'}
-      `}
-    >
+    <section className={`py-[var(--section-padding)] ${themeClasses}`}>
       <motion.div 
         className="section-container max-w-[720px]"
         initial="hidden"
@@ -46,7 +54,7 @@ export function TextSection({ data }: TextSectionProps) {
         
         {/* 标题 */}
         <motion.h2 
-          className="headline-tertiary mb-8"
+          className="headline-tertiary mb-5"
           variants={staggerItem}
         >
           {title}
@@ -57,7 +65,7 @@ export function TextSection({ data }: TextSectionProps) {
           <motion.p 
             key={index}
             className={`
-              body-medium mb-6 last:mb-0
+              body-medium mb-4 last:mb-0
               ${isDark ? 'text-white/70' : 'text-[#86868b]'}
             `}
             variants={staggerItem}
@@ -69,7 +77,7 @@ export function TextSection({ data }: TextSectionProps) {
         {/* 链接 */}
         {links && links.length > 0 && (
           <motion.div 
-            className="flex flex-wrap gap-6 mt-8"
+            className="flex flex-wrap gap-6 mt-5"
             variants={staggerItem}
           >
             {links.map((link, index) => (
@@ -88,4 +96,3 @@ export function TextSection({ data }: TextSectionProps) {
     </section>
   );
 }
-

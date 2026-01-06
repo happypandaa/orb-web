@@ -16,134 +16,198 @@ export interface Media {
   height?: number;
 }
 
-// 链接/按钮
-export interface LinkItem {
-  text: string;
+// 链接/按钮配置
+export interface LinkConfig {
   href: string;
   variant?: 'primary' | 'secondary' | 'text';
   external?: boolean;
 }
 
-// Section 基础类型
-export interface SectionBase {
+// 链接/按钮内容
+export interface LinkContent {
+  text: string;
+}
+
+// 合并后的链接类型 (用于组件)
+export interface LinkItem extends LinkConfig, LinkContent { }
+
+// 主题类型
+export type ThemeType = 'light' | 'dark' | 'gray';
+
+// --- Base Types ---
+
+export interface SectionConfigBase {
   id: string;
   type: string;
+  theme?: ThemeType;
 }
 
-// Hero Section - 首屏大图
-export interface HeroSection extends SectionBase {
-  type: 'hero';
-  title: string;
-  subtitle?: string;
-  description?: string;
-  media?: Media;
-  links?: LinkItem[];
-  theme?: 'light' | 'dark';
-}
-
-// Feature Section - 特性展示
-export interface FeatureSection extends SectionBase {
-  type: 'feature';
-  eyebrow?: string; // 小标题/标签
+export interface SectionContentBase {
   title: string;
   description?: string;
-  media?: Media;
-  links?: LinkItem[];
-  layout?: 'left' | 'right' | 'center';
-  theme?: 'light' | 'dark';
-}
-
-// Showcase Section - 产品/功能展示
-export interface ShowcaseSection extends SectionBase {
-  type: 'showcase';
   eyebrow?: string;
-  title: string;
-  description?: string;
-  items: ShowcaseItem[];
-  theme?: 'light' | 'dark';
 }
 
-export interface ShowcaseItem {
+// --- Specific Sections ---
+
+// Hero Section
+export interface HeroSectionConfig extends SectionConfigBase {
+  type: 'hero';
+  layout?: 'center';
+  media?: Media;
+  links?: LinkConfig[];
+}
+export interface HeroSectionContent extends SectionContentBase {
+  subtitle?: string;
+  links?: LinkContent[];
+}
+export interface HeroSection extends HeroSectionConfig, HeroSectionContent {
+  links?: LinkItem[];
+}
+
+// Feature Section
+export interface FeatureSectionConfig extends SectionConfigBase {
+  type: 'feature';
+  layout?: 'left' | 'right' | 'center';
+  media?: Media;
+  links?: LinkConfig[];
+}
+export interface FeatureSectionContent extends SectionContentBase {
+  links?: LinkContent[];
+}
+export interface FeatureSection extends FeatureSectionConfig, FeatureSectionContent {
+  links?: LinkItem[];
+}
+
+// Showcase Section
+export interface ShowcaseItemConfig {
   id: string;
+  media?: Media;
+  link?: LinkConfig;
+}
+export interface ShowcaseItemContent {
   title: string;
   description?: string;
-  media?: Media;
+  link?: LinkContent;
+}
+export interface ShowcaseItem extends ShowcaseItemConfig, ShowcaseItemContent {
   link?: LinkItem;
 }
 
-// Stats Section - 数据统计
-export interface StatsSection extends SectionBase {
-  type: 'stats';
-  title?: string;
-  items: StatItem[];
-  theme?: 'light' | 'dark';
+export interface ShowcaseSectionConfig extends SectionConfigBase {
+  type: 'showcase';
+  items: ShowcaseItemConfig[];
+}
+export interface ShowcaseSectionContent extends SectionContentBase {
+  items: Record<string, ShowcaseItemContent>; // Keyed by item ID
+}
+export interface ShowcaseSection extends ShowcaseSectionConfig, Omit<ShowcaseSectionContent, 'items'> {
+  items: ShowcaseItem[];
 }
 
+// Stats Section
 export interface StatItem {
   value: string;
   label: string;
   prefix?: string;
   suffix?: string;
 }
+export interface StatsSectionConfig extends SectionConfigBase {
+  type: 'stats';
+}
+export interface StatsSectionContent extends SectionContentBase {
+  items: StatItem[];
+}
+export interface StatsSection extends StatsSectionConfig, StatsSectionContent { }
 
-// CTA Section - 行动召唤
-export interface CTASection extends SectionBase {
+
+// CTA Section
+export interface CTASectionConfig extends SectionConfigBase {
   type: 'cta';
-  title: string;
-  description?: string;
+  links: LinkConfig[];
+}
+export interface CTASectionContent extends SectionContentBase {
+  links: LinkContent[];
+}
+export interface CTASection extends CTASectionConfig, CTASectionContent {
   links: LinkItem[];
-  theme?: 'light' | 'dark';
 }
 
-// Text Section - 纯文字内容
-export interface TextSection extends SectionBase {
+// Text Section
+export interface TextSectionConfig extends SectionConfigBase {
   type: 'text';
-  eyebrow?: string;
-  title: string;
+  links?: LinkConfig[];
+}
+export interface TextSectionContent extends Omit<SectionContentBase, 'description'> {
   body: string | string[]; // 支持多段落
+  links?: LinkContent[];
+}
+export interface TextSection extends TextSectionConfig, TextSectionContent {
+  description?: string; // Added to satisfy SectionContentBase if needed, but TextSection uses body
   links?: LinkItem[];
-  theme?: 'light' | 'dark';
 }
 
-// 所有 Section 类型联合
-export type Section = 
-  | HeroSection 
-  | FeatureSection 
-  | ShowcaseSection 
-  | StatsSection 
-  | CTASection 
+
+// --- Unions ---
+
+export type SectionConfig =
+  | HeroSectionConfig
+  | FeatureSectionConfig
+  | ShowcaseSectionConfig
+  | StatsSectionConfig
+  | CTASectionConfig
+  | TextSectionConfig;
+
+export type SectionContent =
+  | HeroSectionContent
+  | FeatureSectionContent
+  | ShowcaseSectionContent
+  | StatsSectionContent
+  | CTASectionContent
+  | TextSectionContent;
+
+// 组件使用的完整类型
+export type Section =
+  | HeroSection
+  | FeatureSection
+  | ShowcaseSection
+  | StatsSection
+  | CTASection
   | TextSection;
 
-// 页面数据结构
-export interface PageData {
+// --- Page & Site Config ---
+
+export interface PageContent {
   meta: {
     title: string;
     description: string;
     keywords?: string[];
   };
-  sections: Section[];
+  sections: Record<string, SectionContent>; // Keyed by Section ID
+  nav: Record<string, string>; // Keyed by label key
+  footer: {
+    copyright: string;
+    privacy: string;
+    terms: string;
+    support: string;
+    contact: string;
+  };
 }
 
-// 导航项
 export interface NavItem {
-  label: string;
+  label: string; // Key for translation
   href: string;
   children?: NavItem[];
 }
 
-// 网站全局配置
 export interface SiteConfig {
   name: string;
   logo?: Media;
+  sections: SectionConfig[];
   navigation: NavItem[];
   footer: {
-    copyright: string;
+    copyright: string; // Default or key
     links: NavItem[];
-    social?: {
-      platform: string;
-      url: string;
-      icon: string;
-    }[];
   };
 }
 

@@ -9,28 +9,36 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ShowcaseSection as ShowcaseSectionType } from '@/types/content';
-import { staggerContainer, staggerItem, scaleIn } from '@/lib/motion';
+import { staggerContainer, staggerItem } from '@/lib/motion';
 
 interface ShowcaseSectionProps {
   data: ShowcaseSectionType;
+}
+
+// 获取背景样式
+function getThemeClasses(theme: string) {
+  switch (theme) {
+    case 'dark':
+      return { bg: 'bg-black text-white', card: 'bg-[#1d1d1f]' };
+    case 'gray':
+      return { bg: 'bg-[#f5f5f7] text-[#1d1d1f]', card: 'bg-white' };
+    default:
+      return { bg: 'bg-white text-[#1d1d1f]', card: 'bg-[#f5f5f7]' };
+  }
 }
 
 export function ShowcaseSection({ data }: ShowcaseSectionProps) {
   const { eyebrow, title, description, items, theme = 'light' } = data;
   
   const isDark = theme === 'dark';
+  const themeClasses = getThemeClasses(theme);
   
   return (
-    <section 
-      className={`
-        py-[var(--section-padding)]
-        ${isDark ? 'bg-black text-white' : 'bg-white text-[#1d1d1f]'}
-      `}
-    >
+    <section className={`py-[var(--section-padding)] ${themeClasses.bg}`}>
       <div className="section-container section-container-wide">
         {/* 头部 */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -46,7 +54,7 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
           )}
           
           <motion.h2 
-            className="headline-secondary mb-6"
+            className="headline-secondary mb-4"
             variants={staggerItem}
           >
             {title}
@@ -78,7 +86,7 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
               key={item.id}
               className={`
                 group rounded-3xl overflow-hidden
-                ${isDark ? 'bg-[#1d1d1f]' : 'bg-[#f5f5f7]'}
+                ${themeClasses.card}
                 transition-transform duration-300 hover:scale-[1.02]
               `}
               variants={staggerItem}
@@ -130,4 +138,3 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
     </section>
   );
 }
-
