@@ -29,7 +29,7 @@
     "privacy": {
       "eyebrow": "🔒 隐私优先",
       "title": "你的数据，本应由你掌控",
-      "description": "OrbNote 坚持「本地优先 + 用户私有云」的设计理念，我们不运行任何后端服务器，这意味着我们无法看到你的任何一条笔记。"
+      "description": "OrbNote 坚持「本地优先 + 用户私有云」理念，直接使用你个人的 iCloud 存储空间。我们不运行后端服务器，确保极致隐私。同时我们不收「空间存储费」，所有数据占用你自己的 iCloud 配额。"
     },
     "privacy-e2ee": {
       "eyebrow": "端到端加密",
@@ -40,16 +40,6 @@
           "text": "了解 iCloud 高级数据保护"
         }
       ]
-    },
-    "privacy-icloud": {
-      "eyebrow": "透明透明再透明",
-      "title": "占用你的 iCloud 空间",
-      "description": "为了保障纯净的隐私环境，OrbNote 直接使用你个人的 iCloud 存储空间。我们不收「空间存储费」，所有多媒体附件均占用你自己的 iCloud 配额。"
-    },
-    "privacy-ownership": {
-      "eyebrow": "无数据锁定",
-      "title": "数据所有权，永远属于你",
-      "description": "既然数据在你的 iCloud 里，你随时拥有对它们的绝对所有权，不用担心应用关停导致数据丢失。"
     },
     "features-intro": {
       "eyebrow": "📝 深度记录",

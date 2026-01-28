@@ -18,30 +18,19 @@ export const siteConfig: SiteConfig = {
       id: "privacy",
       type: "feature",
       layout: "center",
-      theme: "gray"
+      theme: "gray",
+      icons: ["cloud"]
     },
     {
       id: "privacy-e2ee",
       type: "feature",
-      layout: "left",
+      layout: "center",
       theme: "light",
-      media: { type: "image", src: "/images/feature-encryption.svg", width: 800, height: 600, alt: "encryption" },
+      icons: ["lock"],
       links: [{ href: "https://support.apple.com/HT212520", variant: "text" }]
     },
-    {
-      id: "privacy-icloud",
-      type: "feature",
-      layout: "right",
-      theme: "gray",
-      media: { type: "image", src: "/images/feature-icloud.svg", width: 800, height: 600, alt: "icloud" }
-    },
-    {
-      id: "privacy-ownership",
-      type: "feature",
-      layout: "left",
-      theme: "light",
-      media: { type: "image", src: "/images/feature-ownership.svg", width: 800, height: 600, alt: "ownership" }
-    },
+
+
     {
       id: "features-intro",
       type: "feature",
@@ -61,9 +50,9 @@ export const siteConfig: SiteConfig = {
     {
       id: "longtext",
       type: "feature",
-      layout: "right",
+      layout: "center",
       theme: "gray",
-      media: { type: "image", src: "/images/feature-longtext.svg", width: 800, height: 600, alt: "longtext" }
+      icons: ["filetext"]
     },
     {
       id: "ai-intro",

@@ -40,12 +40,14 @@ export interface SectionConfigBase {
   id: string;
   type: string;
   theme?: ThemeType;
+  icons?: string[];
 }
 
 export interface SectionContentBase {
   title: string;
   description?: string;
   eyebrow?: string;
+  icons?: string[];
 }
 
 // --- Specific Sections ---

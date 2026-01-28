@@ -8,6 +8,19 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Lock,
+  Cloud,
+  Shield,
+  FileText,
+  Sparkles,
+  Smartphone,
+  Watch,
+  Monitor,
+  Zap,
+  Globe,
+  Share2
+} from 'lucide-react';
 import type { FeatureSection as FeatureSectionType } from '@/types/content';
 import { fadeInLeft, fadeInRight, scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -27,54 +40,87 @@ function getThemeClasses(theme: string) {
   }
 }
 
+const IconMap: Record<string, any> = {
+  lock: Lock,
+  cloud: Cloud,
+  shield: Shield,
+  filetext: FileText,
+  sparkles: Sparkles,
+  smartphone: Smartphone,
+  watch: Watch,
+  monitor: Monitor,
+  zap: Zap,
+  globe: Globe,
+  share: Share2
+};
+
 export function FeatureSection({ data }: FeatureSectionProps) {
-  const { 
-    eyebrow, 
-    title, 
-    description, 
-    media, 
-    links, 
+  const {
+    eyebrow,
+    title,
+    description,
+    media,
+    links,
+    icons,
     layout = 'center',
-    theme = 'light' 
+    theme = 'light'
   } = data;
-  
+
   const isDark = theme === 'dark';
   const themeClasses = getThemeClasses(theme);
-  
+
   // 居中布局
   if (layout === 'center') {
     return (
       <section className={`py-[var(--section-padding)] ${themeClasses}`}>
-        <motion.div 
-          className="section-container text-center"
+        <motion.div
+          className="section-container flex flex-col items-start text-left"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
         >
+          {/* Icons */}
+          {icons && icons.length > 0 && (
+            <motion.div
+              className="flex justify-start gap-4 mb-8"
+              variants={staggerItem}
+            >
+              {icons.map((iconName, index) => {
+                const Icon = IconMap[iconName.toLowerCase()];
+                if (!Icon) return null;
+                return (
+                  <div key={index} className="w-[66px] h-[66px] flex items-center justify-center rounded-full bg-blue-500/10 text-[#0071e3]">
+                    <Icon size={32} />
+                  </div>
+                );
+              })}
+            </motion.div>
+          )}
+
           {/* 眉标 */}
           {eyebrow && (
-            <motion.p 
+            <motion.p
               className="text-[#0071e3] body-small font-semibold uppercase tracking-wider mb-3"
               variants={staggerItem}
             >
               {eyebrow}
             </motion.p>
           )}
-          
+
           {/* 标题 */}
-          <motion.h2 
-            className="headline-secondary mb-4"
+          <motion.h2
+            className="text-[48px] md:text-[96px] leading-[1.05] font-bold tracking-tight mb-6 max-w-[75%]"
             variants={staggerItem}
           >
             {title}
           </motion.h2>
-          
+
           {/* 描述 */}
           {description && (
-            <motion.p 
+            <motion.p
               className={`
-                body-large max-w-3xl mx-auto mb-6
+                text-[20px] md:text-[28px] leading-relaxed max-w-[75%] mb-8
                 ${isDark ? 'text-white/70' : 'text-[#86868b]'}
               `}
               variants={staggerItem}
@@ -82,10 +128,10 @@ export function FeatureSection({ data }: FeatureSectionProps) {
               {description}
             </motion.p>
           )}
-          
+
           {/* 媒体 */}
           {media && (
-            <motion.div 
+            <motion.div
               className="mt-8 rounded-2xl overflow-hidden"
               variants={scaleIn}
             >
@@ -111,18 +157,18 @@ export function FeatureSection({ data }: FeatureSectionProps) {
               )}
             </motion.div>
           )}
-          
+
           {/* 链接 */}
           {links && links.length > 0 && (
-            <motion.div 
-              className="flex flex-wrap items-center justify-center gap-6 mt-6"
+            <motion.div
+              className="flex flex-wrap items-center justify-start gap-6 mt-8"
               variants={staggerItem}
             >
               {links.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}
-                  className="link-primary body-medium inline-flex items-center"
+                  className="link-primary text-[20px] inline-flex items-center"
                 >
                   {link.text}
                   <span className="ml-1">›</span>
@@ -134,10 +180,10 @@ export function FeatureSection({ data }: FeatureSectionProps) {
       </section>
     );
   }
-  
+
   // 左右布局
   const isLeft = layout === 'left';
-  
+
   return (
     <section className={`py-[var(--section-padding)] ${themeClasses}`}>
       <div className="section-container section-container-wide">
@@ -146,7 +192,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           ${isLeft ? '' : 'lg:flex-row-reverse'}
         `}>
           {/* 文字内容 */}
-          <motion.div 
+          <motion.div
             className={`${isLeft ? 'lg:order-1' : 'lg:order-2'}`}
             initial="hidden"
             whileInView="visible"
@@ -154,23 +200,23 @@ export function FeatureSection({ data }: FeatureSectionProps) {
             variants={staggerContainer}
           >
             {eyebrow && (
-              <motion.p 
+              <motion.p
                 className="text-[#0071e3] body-small font-semibold uppercase tracking-wider mb-3"
                 variants={staggerItem}
               >
                 {eyebrow}
               </motion.p>
             )}
-            
-            <motion.h2 
+
+            <motion.h2
               className="headline-tertiary mb-6"
               variants={staggerItem}
             >
               {title}
             </motion.h2>
-            
+
             {description && (
-              <motion.p 
+              <motion.p
                 className={`
                   body-medium mb-8
                   ${isDark ? 'text-white/70' : 'text-[#86868b]'}
@@ -180,9 +226,9 @@ export function FeatureSection({ data }: FeatureSectionProps) {
                 {description}
               </motion.p>
             )}
-            
+
             {links && links.length > 0 && (
-              <motion.div 
+              <motion.div
                 className="flex flex-wrap gap-6"
                 variants={staggerItem}
               >
@@ -199,10 +245,10 @@ export function FeatureSection({ data }: FeatureSectionProps) {
               </motion.div>
             )}
           </motion.div>
-          
+
           {/* 媒体内容 */}
           {media && (
-            <motion.div 
+            <motion.div
               className={`${isLeft ? 'lg:order-2' : 'lg:order-1'}`}
               initial="hidden"
               whileInView="visible"
