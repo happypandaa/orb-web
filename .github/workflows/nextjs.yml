@@ -56,11 +56,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
+          enable_promoted_builds: true # 建议加上
+          # 添加下面这一行来强制不使用二级路径
+          # generator_config_file: next.config.ts
+          # static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
         with:
