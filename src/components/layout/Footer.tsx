@@ -9,12 +9,12 @@ import { useLocale } from '@/context/LocaleContext';
 import Link from 'next/link';
 
 export function Footer() {
-  const { content } = useLocale();
+  const { content, locale } = useLocale();
 
   const links = [
-    { label: content.footer.privacy, href: '/privacy' },
-    { label: content.footer.terms, href: '/terms' },
-    { label: content.footer.support, href: '/support' },
+    { label: content.footer.privacy, href: `/${locale}/privacy` },
+    { label: content.footer.terms, href: `/${locale}/terms` },
+    { label: content.footer.support, href: `/${locale}/support` },
   ];
 
   return (

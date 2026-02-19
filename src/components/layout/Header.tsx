@@ -7,18 +7,31 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLocale } from '@/context/LocaleContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
-  const { content } = useLocale();
+  const { content, locale } = useLocale();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // If we are not on the home page (e.g. /en or /zh), we need to prefix anchors with the home path
+  // pathname might be "/en", "/en/", "/zh/privacy"
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+
+  const getHref = (anchor: string) => {
+    if (isHomePage) {
+      return anchor;
+    }
+    return `/${locale}${anchor}`;
+  };
 
   const navigation = [
-    { label: content.nav.features, href: '#features-intro' },
-    { label: content.nav.privacy, href: '#privacy' },
-    { label: content.nav.faq, href: '#faq' },
-    { label: content.nav.download, href: '#download' },
+    { label: content.nav.features, href: getHref('#features-intro') },
+    { label: content.nav.privacy, href: getHref('#privacy') },
+    { label: content.nav.faq, href: getHref('#faq') },
+    { label: content.nav.download, href: getHref('#download') },
   ];
 
   return (
@@ -27,7 +40,7 @@ export function Header() {
         <nav className="max-w-[1200px] mx-auto px-6 h-12 flex items-center justify-between">
           {/* Logo */}
           <Link
-            href="/"
+            href={`/${locale}`}
             className="text-white font-semibold text-[18px] hover:opacity-80 transition-opacity"
           >
             OrbNote

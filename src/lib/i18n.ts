@@ -6,7 +6,7 @@
 export const locales = ['zh', 'en', 'ja', 'ko'] as const;
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = 'zh';
+export const defaultLocale: Locale = 'en';
 
 // 语言显示名称
 export const localeNames: Record<Locale, string> = {
@@ -21,7 +21,7 @@ export const localeNames: Record<Locale, string> = {
  */
 export function getPreferredLocale(acceptLanguage?: string): Locale {
   if (!acceptLanguage) return defaultLocale;
-  
+
   // 解析 Accept-Language 头
   const languages = acceptLanguage
     .split(',')
@@ -33,7 +33,7 @@ export function getPreferredLocale(acceptLanguage?: string): Locale {
       };
     })
     .sort((a, b) => b.quality - a.quality);
-  
+
   // 查找匹配的语言
   for (const { code } of languages) {
     // 精确匹配
@@ -46,7 +46,7 @@ export function getPreferredLocale(acceptLanguage?: string): Locale {
       return prefix as Locale;
     }
   }
-  
+
   return defaultLocale;
 }
 
@@ -55,23 +55,23 @@ export function getPreferredLocale(acceptLanguage?: string): Locale {
  */
 export function getBrowserLocale(): Locale {
   if (typeof window === 'undefined') return defaultLocale;
-  
+
   const browserLang = navigator.language || (navigator as any).userLanguage;
   if (!browserLang) return defaultLocale;
-  
+
   const code = browserLang.toLowerCase();
-  
+
   // 精确匹配
   if (locales.includes(code as Locale)) {
     return code as Locale;
   }
-  
+
   // 前缀匹配
   const prefix = code.split('-')[0];
   if (locales.includes(prefix as Locale)) {
     return prefix as Locale;
   }
-  
+
   return defaultLocale;
 }
 
