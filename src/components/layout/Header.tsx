@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLocale } from '@/context/LocaleContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -41,9 +42,16 @@ export function Header() {
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="text-white font-semibold text-[18px] hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            OrbNote
+            <Image
+              src="/icon.png"
+              alt="OrbNote Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-lg"
+            />
+            <span className="text-white font-semibold text-[18px]">OrbNote</span>
           </Link>
 
           {/* Desktop Navigation */}

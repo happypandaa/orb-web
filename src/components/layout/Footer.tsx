@@ -7,6 +7,7 @@
 
 import { useLocale } from '@/context/LocaleContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   const { content, locale } = useLocale();
@@ -31,9 +32,18 @@ export function Footer() {
             </Link>
           ))}
         </div>
-        <p className="text-[12px] text-[#86868b] text-center">
-          {content.footer.copyright}
-        </p>
+        <div className="flex flex-col items-center gap-4 mb-6">
+          <Image
+            src="/icon.png"
+            alt="OrbNote Logo"
+            width={24}
+            height={24}
+            className="w-6 h-6 rounded-md opacity-50 grayscale"
+          />
+          <p className="text-[12px] text-[#86868b] text-center">
+            {content.footer.copyright}
+          </p>
+        </div>
       </div>
     </footer>
   );

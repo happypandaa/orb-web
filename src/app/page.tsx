@@ -1,8 +1,8 @@
-// src/app/page.tsx
 "use client";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 export default function RootPage() {
   const router = useRouter();
@@ -25,8 +25,16 @@ export default function RootPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#fafafa] dark:bg-black">
       <div className="flex flex-col items-center gap-4">
-        {/* Simple OrbNote Logo / Spinner placeholder */}
-        <div className="w-12 h-12 rounded-full border-2 border-t-transparent border-[#1d1d1f] dark:border-white animate-spin"></div>
+        {/* OrbNote Logo */}
+        <div className="relative w-20 h-20 animate-pulse">
+          <Image
+            src="/icon.png"
+            alt="OrbNote"
+            fill
+            className="object-contain rounded-2xl"
+            priority
+          />
+        </div>
       </div>
     </div>
   );
