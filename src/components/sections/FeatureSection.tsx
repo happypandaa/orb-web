@@ -72,7 +72,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
   // 居中布局
   if (layout === 'center') {
     return (
-      <section className={`py-[var(--section-padding)] ${themeClasses}`}>
+      <section id={data.id} className={`py-[var(--section-padding)] ${themeClasses}`}>
         <motion.div
           className="section-container flex flex-col items-start text-left"
           initial="hidden"
@@ -87,6 +87,21 @@ export function FeatureSection({ data }: FeatureSectionProps) {
               variants={staggerItem}
             >
               {icons.map((iconName, index) => {
+                // Check if it's a custom SVG file path
+                if (iconName.startsWith('/') || iconName.endsWith('.svg')) {
+                  return (
+                    <div key={index} className="w-[66px] h-[66px] flex items-center justify-center rounded-2xl overflow-hidden">
+                      <Image
+                        src={iconName}
+                        alt=""
+                        width={66}
+                        height={66}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  );
+                }
+
                 const Icon = IconMap[iconName.toLowerCase()];
                 if (!Icon) return null;
                 return (
@@ -98,19 +113,11 @@ export function FeatureSection({ data }: FeatureSectionProps) {
             </motion.div>
           )}
 
-          {/* 眉标 */}
-          {eyebrow && (
-            <motion.p
-              className="text-[#0071e3] body-small font-semibold uppercase tracking-wider mb-3"
-              variants={staggerItem}
-            >
-              {eyebrow}
-            </motion.p>
-          )}
+
 
           {/* 标题 */}
           <motion.h2
-            className="text-[48px] md:text-[96px] leading-[1.05] font-bold tracking-tight mb-6 max-w-[75%]"
+            className="text-[32px] md:text-[56px] leading-[1.08] font-semibold tracking-tight mb-6 max-w-[75%]"
             variants={staggerItem}
           >
             {title}
@@ -120,7 +127,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           {description && (
             <motion.p
               className={`
-                text-[20px] md:text-[28px] leading-relaxed max-w-[75%] mb-8
+                text-[17px] md:text-[21px] leading-relaxed max-w-[75%] mb-8
                 ${isDark ? 'text-white/70' : 'text-[#86868b]'}
               `}
               variants={staggerItem}
@@ -185,7 +192,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
   const isLeft = layout === 'left';
 
   return (
-    <section className={`py-[var(--section-padding)] ${themeClasses}`}>
+    <section id={data.id} className={`py-[var(--section-padding)] ${themeClasses}`}>
       <div className="section-container section-container-wide">
         <div className={`
           grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center
@@ -199,14 +206,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-            {eyebrow && (
-              <motion.p
-                className="text-[#0071e3] body-small font-semibold uppercase tracking-wider mb-3"
-                variants={staggerItem}
-              >
-                {eyebrow}
-              </motion.p>
-            )}
+
 
             <motion.h2
               className="headline-tertiary mb-6"

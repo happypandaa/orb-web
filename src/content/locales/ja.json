@@ -80,40 +80,6 @@
       "title": "チャットボックスは短いメッセージだけ？",
       "description": "OrbNoteは長文テキストの入力と管理をネイティブサポート。記事管理モードと組み合わせて、深いコンテンツも整理整頓。"
     },
-    "ai-intro": {
-      "eyebrow": "🤖 オンデバイスAI",
-      "title": "賢く、でも越えない",
-      "description": "データをクラウドに送信する代わりに、Appleデバイス上のNeural Engineを活用。"
-    },
-    "ai-features": {
-      "eyebrow": "ローカルインテリジェンス",
-      "title": "AI機能一覧",
-      "description": "すべてのAI処理はデバイス上で完結。あなたのデータはデバイスから離れません。",
-      "items": {
-        "ai-gallery": {
-          "title": "スマートギャラリー",
-          "description": "画像コンテンツを自動認識し、検索可能なタグを生成。"
-        },
-        "ai-voice": {
-          "title": "音声テキスト変換 (Pro)",
-          "description": "音声メッセージを自動文字起こし。話したアイデアを検索可能なテキストに。"
-        },
-        "ai-search": {
-          "title": "高度なグローバル検索",
-          "description": "テキストを超えた検索—画像内のOCRテキストやPDFコンテンツも簡単に検索。"
-        }
-      }
-    },
-    "specs": {
-      "eyebrow": "技術仕様",
-      "title": "内部構造",
-      "body": [
-        "ストレージ：ローカルCore Data + iCloud CloudKit",
-        "暗号化：Apple iCloudエンドツーエンド暗号化",
-        "フレームワーク：Swift 5.9 / SwiftUI (100%ネイティブ)",
-        "言語：简体中文 / English / 日本語 / 한국어"
-      ]
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "よくある質問",
@@ -124,7 +90,7 @@
         "A: OrbNoteは同期失敗の通知を表示します。iCloudスペースを整理するか、Appleのストレージプランをアップグレードできます。ローカルデータは安全なまま—他のデバイスに同期されないだけです。"
       ]
     },
-    "cta": {
+    "download": {
       "title": "OrbNoteを始めよう",
       "description": "App Storeで無料ダウンロード。プライベートなノート体験を始めましょう。",
       "links": [
@@ -140,7 +106,6 @@
   "nav": {
     "features": "機能",
     "privacy": "プライバシー",
-    "ai": "AI",
     "faq": "FAQ",
     "download": "ダウンロード"
   },

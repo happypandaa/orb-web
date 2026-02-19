@@ -69,6 +69,7 @@ export function StatsSection({ data }: StatsSectionProps) {
   
   return (
     <section 
+      id={data.id}
       className={`
         py-[var(--section-padding)]
         ${isDark ? 'bg-black text-white' : 'bg-[#fafafa] text-[#1d1d1f]'}
@@ -122,4 +123,3 @@ export function StatsSection({ data }: StatsSectionProps) {
     </section>
   );
 }
-

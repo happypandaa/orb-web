@@ -80,40 +80,6 @@
       "title": "채팅창은 짧은 메시지만?",
       "description": "OrbNote는 긴 글 텍스트 입력과 관리를 네이티브 지원. 글 관리 모드와 결합하여 깊은 콘텐츠도 정리 정돈."
     },
-    "ai-intro": {
-      "eyebrow": "🤖 온디바이스 AI",
-      "title": "똑똑하게, 하지만 선을 넘지 않게",
-      "description": "데이터를 클라우드로 보내는 대신 Apple 기기의 Neural Engine을 활용."
-    },
-    "ai-features": {
-      "eyebrow": "로컬 인텔리전스",
-      "title": "AI 기능 한눈에",
-      "description": "모든 AI 처리는 기기에서 완료. 당신의 데이터는 기기를 떠나지 않습니다.",
-      "items": {
-        "ai-gallery": {
-          "title": "스마트 갤러리",
-          "description": "이미지 콘텐츠를 자동 인식하고 검색 가능한 태그 생성."
-        },
-        "ai-voice": {
-          "title": "음성 텍스트 변환 (Pro)",
-          "description": "음성 메시지 자동 전사. 말한 아이디어를 검색 가능한 텍스트로."
-        },
-        "ai-search": {
-          "title": "고급 글로벌 검색",
-          "description": "텍스트를 넘어선 검색—이미지 내 OCR 텍스트와 PDF 콘텐츠도 쉽게 검색."
-        }
-      }
-    },
-    "specs": {
-      "eyebrow": "기술 사양",
-      "title": "내부 구조",
-      "body": [
-        "저장소: 로컬 Core Data + iCloud CloudKit",
-        "암호화: Apple iCloud 종단간 암호화",
-        "프레임워크: Swift 5.9 / SwiftUI (100% 네이티브)",
-        "언어: 简体中文 / English / 日本語 / 한국어"
-      ]
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "자주 묻는 질문",
@@ -124,7 +90,7 @@
         "A: OrbNote는 동기화 실패 알림을 표시합니다. iCloud 공간을 정리하거나 Apple 저장 공간 플랜을 업그레이드할 수 있습니다. 로컬 데이터는 안전하게 유지됩니다—다른 기기로 동기화되지 않을 뿐입니다."
       ]
     },
-    "cta": {
+    "download": {
       "title": "OrbNote 시작하기",
       "description": "App Store에서 무료 다운로드. 프라이빗한 노트 여정을 시작하세요.",
       "links": [
@@ -140,7 +106,6 @@
   "nav": {
     "features": "기능",
     "privacy": "프라이버시",
-    "ai": "AI",
     "faq": "FAQ",
     "download": "다운로드"
   },

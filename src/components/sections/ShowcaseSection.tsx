@@ -29,39 +29,32 @@ function getThemeClasses(theme: string) {
 
 export function ShowcaseSection({ data }: ShowcaseSectionProps) {
   const { eyebrow, title, description, items, theme = 'light' } = data;
-  
+
   const isDark = theme === 'dark';
   const themeClasses = getThemeClasses(theme);
-  
+
   return (
-    <section className={`py-[var(--section-padding)] ${themeClasses.bg}`}>
+    <section id={data.id} className={`py-[var(--section-padding)] ${themeClasses.bg}`}>
       <div className="section-container section-container-wide">
         {/* 头部 */}
-        <motion.div 
+        <motion.div
           className="text-center mb-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
-          {eyebrow && (
-            <motion.p 
-              className="text-[#0071e3] body-small font-semibold uppercase tracking-wider mb-3"
-              variants={staggerItem}
-            >
-              {eyebrow}
-            </motion.p>
-          )}
-          
-          <motion.h2 
+
+
+          <motion.h2
             className="headline-secondary mb-4"
             variants={staggerItem}
           >
             {title}
           </motion.h2>
-          
+
           {description && (
-            <motion.p 
+            <motion.p
               className={`
                 body-large max-w-3xl mx-auto
                 ${isDark ? 'text-white/70' : 'text-[#86868b]'}
@@ -72,9 +65,9 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
             </motion.p>
           )}
         </motion.div>
-        
+
         {/* 网格展示 */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
@@ -93,25 +86,25 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
             >
               {/* 媒体 */}
               {item.media && (
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden p-8 bg-gray-50/50">
                   {item.media.type === 'image' && (
                     <Image
                       src={item.media.src}
                       alt={item.media.alt || item.title}
                       width={item.media.width || 600}
                       height={item.media.height || 450}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   )}
                 </div>
               )}
-              
+
               {/* 内容 */}
               <div className="p-8">
                 <h3 className="headline-tertiary text-[24px] mb-3">
                   {item.title}
                 </h3>
-                
+
                 {item.description && (
                   <p className={`
                     body-small mb-4
@@ -120,7 +113,7 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
                     {item.description}
                   </p>
                 )}
-                
+
                 {item.link && (
                   <Link
                     href={item.link.href}

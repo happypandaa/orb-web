@@ -38,7 +38,9 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   // 初始化时检测语言
   useEffect(() => {
     // 优先使用用户保存的偏好
+    // 优先使用用户保存的偏好
     const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY) as Locale | null;
+
     if (savedLocale && locales.includes(savedLocale)) {
       setLocaleState(savedLocale);
     } else {

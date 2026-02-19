@@ -34,6 +34,7 @@ export function HeroSection({ data }: HeroSectionProps) {
   
   return (
     <section 
+      id={data.id}
       className={`
         relative min-h-screen flex flex-col items-center justify-center overflow-hidden
         ${getThemeClasses()}

@@ -34,7 +34,7 @@ export function TextSection({ data }: TextSectionProps) {
   const paragraphs = Array.isArray(body) ? body : [body];
   
   return (
-    <section className={`py-[var(--section-padding)] ${themeClasses}`}>
+    <section id={data.id} className={`py-[var(--section-padding)] ${themeClasses}`}>
       <motion.div 
         className="section-container max-w-[720px]"
         initial="hidden"

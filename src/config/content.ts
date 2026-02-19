@@ -8,10 +8,9 @@ export const siteConfig: SiteConfig = {
       type: "hero",
       layout: "center", // Hero usually doesn't need layout but adding for consistency if needed or ignore
       theme: "light",
-      media: { type: "image", src: "/images/platform.png", width: 1200, height: 800, alt: "platform" },
+      media: { type: "image", src: "/images/platform.jpg", width: 1200, height: 800, alt: "platform" },
       links: [
-        { href: "#download", variant: "primary" },
-        { href: "#privacy", variant: "secondary" }
+        { href: "#download", variant: "primary" }
       ]
     },
     {
@@ -19,14 +18,14 @@ export const siteConfig: SiteConfig = {
       type: "feature",
       layout: "center",
       theme: "gray",
-      icons: ["cloud"]
+      icons: ["/images/icloud.svg"]
     },
     {
       id: "privacy-e2ee",
       type: "feature",
       layout: "center",
       theme: "light",
-      icons: ["lock"],
+      icons: ["/images/lock.svg"],
       links: [{ href: "https://support.apple.com/HT212520", variant: "text" }]
     },
 
@@ -42,9 +41,9 @@ export const siteConfig: SiteConfig = {
       type: "showcase",
       theme: "light",
       items: [
-        { id: "macos", media: { type: "image", src: "/images/platform-mac.svg", width: 600, height: 450, alt: "macos" } },
-        { id: "ios", media: { type: "image", src: "/images/platform-ios.svg", width: 600, height: 450, alt: "ios" } },
-        { id: "watchos", media: { type: "image", src: "/images/platform-watch.svg", width: 600, height: 450, alt: "watchos" } }
+        { id: "macos", media: { type: "image", src: "/images/mac.jpg", width: 600, height: 450, alt: "macos" } },
+        { id: "ios", media: { type: "image", src: "/images/iphone.jpg", width: 600, height: 450, alt: "ios" } },
+        { id: "watchos", media: { type: "image", src: "/images/watch.jpg", width: 600, height: 450, alt: "watchos" } }
       ]
     },
     {
@@ -52,48 +51,26 @@ export const siteConfig: SiteConfig = {
       type: "feature",
       layout: "center",
       theme: "gray",
-      icons: ["filetext"]
+      icons: ["/images/doc.svg"]
     },
+
     {
-      id: "ai-intro",
-      type: "feature",
-      layout: "center",
-      theme: "dark"
-    },
-    {
-      id: "ai-features",
-      type: "showcase",
-      theme: "gray",
-      items: [
-        { id: "ai-gallery", media: { type: "image", src: "/images/ai-gallery.svg", width: 600, height: 450, alt: "ai-gallery" } },
-        { id: "ai-voice", media: { type: "image", src: "/images/ai-voice.svg", width: 600, height: 450, alt: "ai-voice" } },
-        { id: "ai-search", media: { type: "image", src: "/images/ai-search.svg", width: 600, height: 450, alt: "ai-search" } }
-      ]
-    },
-    {
-      id: "specs",
+      id: "faq",
       type: "text",
       theme: "light"
     },
     {
-      id: "faq",
-      type: "text",
-      theme: "gray"
-    },
-    {
-      id: "cta",
+      id: "download",
       type: "cta",
       theme: "dark",
       links: [
-        { href: "#download", variant: "primary" },
-        { href: "#pricing", variant: "secondary" }
+        { href: "#download", variant: "primary" }
       ]
     }
   ],
   navigation: [
     { label: "features", href: "#features" },
     { label: "privacy", href: "#privacy" },
-    { label: "ai", href: "#ai" },
     { label: "faq", href: "#faq" },
     { label: "download", href: "#download" }
   ],

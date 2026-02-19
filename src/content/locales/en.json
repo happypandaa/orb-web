@@ -80,40 +80,6 @@
       "title": "Who Said Chat Boxes Are Only for Short Messages?",
       "description": "OrbNote natively supports long-form text entry and management. Use it as a long-form editor with article management mode to keep deep content organized."
     },
-    "ai-intro": {
-      "eyebrow": "🤖 On-Device AI",
-      "title": "Smart, But Never Overstepping",
-      "description": "We leverage Apple's on-device Neural Engine instead of sending your data to the cloud for processing."
-    },
-    "ai-features": {
-      "eyebrow": "Local Intelligence",
-      "title": "AI Features at a Glance",
-      "description": "All AI processing happens on-device. Your data never leaves your device.",
-      "items": {
-        "ai-gallery": {
-          "title": "Smart Gallery",
-          "description": "Automatically recognizes image content and generates searchable tags."
-        },
-        "ai-voice": {
-          "title": "Voice to Text (Pro)",
-          "description": "Voice messages auto-transcribed, turning your spoken ideas into searchable text."
-        },
-        "ai-search": {
-          "title": "Advanced Global Search",
-          "description": "Search beyond text—find OCR text in images and content in PDFs effortlessly."
-        }
-      }
-    },
-    "specs": {
-      "eyebrow": "Tech Specs",
-      "title": "Under the Hood",
-      "body": [
-        "Storage: Local Core Data + iCloud CloudKit",
-        "Encryption: Apple iCloud End-to-End Encryption",
-        "Framework: Swift 5.9 / SwiftUI (100% Native)",
-        "Languages: 简体中文 / English / 日本語 / 한국어"
-      ]
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Frequently Asked Questions",
@@ -124,7 +90,7 @@
         "A: OrbNote will show a sync failure notice. You can free up iCloud space or upgrade your Apple storage plan. Your local data remains safe—it just won't sync to other devices."
       ]
     },
-    "cta": {
+    "download": {
       "title": "Get Started with OrbNote",
       "description": "Download free on the App Store and begin your private note-taking journey.",
       "links": [
@@ -140,7 +106,6 @@
   "nav": {
     "features": "Features",
     "privacy": "Privacy",
-    "ai": "AI",
     "faq": "FAQ",
     "download": "Download"
   },

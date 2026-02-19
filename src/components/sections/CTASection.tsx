@@ -21,6 +21,7 @@ export function CTASection({ data }: CTASectionProps) {
   
   return (
     <section 
+      id={data.id}
       className={`
         py-[var(--section-padding)]
         ${isDark 
@@ -96,4 +97,3 @@ export function CTASection({ data }: CTASectionProps) {
     </section>
   );
 }
-
