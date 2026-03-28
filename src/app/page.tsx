@@ -3,21 +3,13 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from 'next/image';
+import { getBrowserLocale } from "@/lib/i18n";
 
 export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Detect user language
-    let lang = 'en';
-
-    if (typeof navigator !== 'undefined' && navigator.language) {
-      if (navigator.language.startsWith('zh')) {
-        lang = 'zh';
-      }
-    }
-
-    // Redirect
+    const lang = getBrowserLocale();
     router.replace(`/${lang}`);
   }, [router]);
 

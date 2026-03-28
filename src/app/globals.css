@@ -125,7 +125,8 @@ body {
   width: 100%;
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 40px);
+  padding-left: clamp(20px, 5vw, 40px);
+  padding-right: clamp(20px, 5vw, 40px);
 }
 
 .section-container-wide {

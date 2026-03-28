@@ -1,11 +1,12 @@
 {
   "meta": {
-    "title": "OrbNote - 你的智能对话式笔记本",
-    "description": "灵感随手即记，数据绝对私有。基于 Apple 原生技术，为深度记录与长效隐私而生。",
+    "title": "OrbNote 2.0 - AI 保存与你的长期记忆工具",
+    "description": "像聊天一样记下内容，像知识库一样长期积累。普通笔记仍坚持本地优先与 iCloud 私有同步；当你主动使用 AI 保存时，OrbNote 会帮你整理并归档到更合适的会话。AI 保存现为 OrbNote Pro 能力。",
     "keywords": [
       "OrbNote",
       "笔记",
       "隐私",
+      "AI 保存",
       "iCloud",
       "Apple",
       "端到端加密",
@@ -14,27 +15,23 @@
   },
   "sections": {
     "hero": {
-      "title": "你的智能\n对话式笔记本",
-      "subtitle": "OrbNote",
-      "description": "灵感随手即记，数据绝对私有。基于 Apple 原生技术，为深度记录与长效隐私而生。",
+      "title": "记下内容，交给 AI 保存",
+      "description": "本地优先记录，AI 按需整理。AI 保存为 OrbNote Pro 能力。",
       "links": [
         {
           "text": "App Store 下载"
-        },
-        {
-          "text": "了解更多"
         }
       ]
     },
     "privacy": {
-      "eyebrow": "🔒 隐私优先",
-      "title": "你的数据，本应由你掌控",
-      "description": "OrbNote 坚持「本地优先 + 用户私有云」理念，直接使用你个人的 iCloud 存储空间。我们不运行后端服务器，确保极致隐私。同时我们不收「空间存储费」，所有数据占用你自己的 iCloud 配额。"
+      "eyebrow": "🔒 隐私与边界",
+      "title": "普通笔记仍然只属于你",
+      "description": "OrbNote 继续坚持「本地优先 + 用户私有云」。普通笔记、附件与同步数据主要保存在你的设备和你自己的 iCloud 中。我们没有用于存储这些内容的用户后台数据库。"
     },
     "privacy-e2ee": {
-      "eyebrow": "端到端加密",
-      "title": "E2EE 深度集成 Apple CloudKit",
-      "description": "利用 iCloud 的高级数据保护（Advanced Data Protection），你的内容在传输和存储时均经过端到端加密。只有你自己的设备可以解密内容，连 Apple 和我们也无法读取。",
+      "eyebrow": "普通笔记的隐私保护",
+      "title": "继续深度集成 Apple CloudKit 与 E2EE",
+      "description": "对于普通笔记与同步，OrbNote 继续依赖 Apple CloudKit 与高级数据保护（Advanced Data Protection）。启用后，内容在传输和存储时可获得端到端加密保护。",
       "links": [
         {
           "text": "了解 iCloud 高级数据保护"
@@ -42,53 +39,59 @@
       ]
     },
     "features-intro": {
-      "eyebrow": "📝 深度记录",
-      "title": "碎片灵感与长篇巨制，皆得其所",
-      "description": "对话式界面，像聊天一样记录。时间轴式的布局让灵感捕捉毫无压力，支持回复、表情与引用。"
+      "eyebrow": "🤖 AI 保存",
+      "title": "AI 帮你整理，而不是替你闲聊",
+      "description": "输入一句话、贴一张图，或者说一句语音。OrbNote 会先给出保存建议：应该放进哪个分组、进入哪个会话、标题和正文怎么整理更合适。"
+    },
+    "ai-workflow": {
+      "eyebrow": "3 步完成整理",
+      "title": "输入内容，AI 给建议，你再决定是否保存",
+      "description": "无论是一句话、截图、附件还是语音，OrbNote 都会先结合有限上下文，生成分组、会话、标题和正文建议。只有在你确认之后，内容才会真正写入长期笔记结构。"
     },
     "showcase": {
-      "eyebrow": "🍎 全生态极速捕捉",
-      "title": "Mac · iPhone · iPad · Watch",
-      "description": "无论你在哪个设备上，灵感都能瞬间捕获。",
+      "eyebrow": "你能得到什么",
+      "title": "这次 AI 保存，重点不是聊天",
+      "description": "它会把零散输入整理成可持续积累的结构化笔记。以下展示包含当前版本真实界面截图与功能示意图。",
       "items": {
-        "macos": {
-          "title": "macOS",
-          "description": "即使不打开主程序，也能通过全局快捷键呼出悬浮窗，自动监听剪贴板，瞬间保存。"
+        "capture": {
+          "title": "多输入一起整理",
+          "description": "文字、图片、附件与语音都可以进入同一条 AI 保存流程，而不是拆成零散动作。"
         },
-        "ios": {
-          "title": "iOS / iPadOS",
-          "description": "深度集成系统分享面板，通过捷径实现自动化采集。"
-        },
-        "watchos": {
-          "title": "watchOS",
-          "description": "抬腕即记，支持语音录入。此时此刻的灵感，下一秒就在你的 Mac 上。"
+        "structure": {
+          "title": "生成保存建议",
+          "description": "AI 会建议应该进入哪个分组、哪个会话，以及更合适的标题和正文，减少手动整理成本。"
         }
       }
     },
     "longtext": {
-      "eyebrow": "长文本支持",
-      "title": "谁说对话框只能发短消息？",
-      "description": "OrbNote 原生支持超长文本录入与管理。你可以将其作为长篇文章的编辑器，配合文章管理模式，让深度内容也井井有条。"
+      "eyebrow": "先建议，再确认",
+      "title": "有 AI 网关，但没有用户内容后台",
+      "description": "当你主动使用 AI 保存时，请求会短暂经过 OrbNote 的无状态 AI 网关，用于鉴权、限流、路由和结果转发。我们不会把你提交给 AI 的内容持久化保存到自有数据库，也不会在常规日志中记录内容明文。"
     },
     "faq": {
       "eyebrow": "常见问题",
       "title": "FAQ",
       "body": [
-        "Q: 为什么 OrbNote 会占用我的 iCloud 空间？",
-        "A: 因为我们不存储你的数据。为了极致的隐私，我们将数据同步的权限交还给你。这意味着你不需要支付额外的订阅费来购买「云存储」，只需利用现有的 iCloud 空间即可。",
-        "Q: 如果我的 iCloud 空间满了怎么办？",
-        "A: OrbNote 会提示同步失败。你可以清理 iCloud 空间或升级 Apple 的存储计划。你的本地数据依然安全，只是无法同步到其他设备。"
+        "Q: OrbNote 会保存我发送给 AI 的内容吗？",
+        "A: 不会作为用户内容持久化保存。AI 请求只会在你主动使用 AI 时短暂经过 OrbNote 的无状态网关，用于鉴权、限流、路由和转发。Redis 仅保存限流所需的去标识化技术标识和计数，不保存笔记内容、提示词正文、图片内容或附件正文。",
+        "Q: AI 会不会自动改动我的原始内容？",
+        "A: 不会。AI 会先生成保存建议，只有你确认后，内容才会真正写入对应的会话。",
+        "Q: AI 会不会读取我所有笔记？",
+        "A: 不会。AI 只会处理你主动提交的内容，以及为了判断保存位置所需的有限上下文。普通笔记数据仍然主要保存在你的设备和 iCloud 中。",
+        "Q: 上游 AI 服务会不会拿我的内容训练模型？",
+        "A: 我们优先选用具备严格隐私承诺的商用 AI 服务。根据其公开政策，API 请求内容不会被用于训练通用模型；我们也优先使用不保留内容，或仅保留必要短期安全数据的服务模式。",
+        "Q: AI 保存是免费功能吗？",
+        "A: 不是。AI 保存现为 OrbNote Pro 能力。你仍然可以使用普通笔记、本地优先存储与 iCloud 私有同步；升级 OrbNote Pro 后可开启 AI 保存。",
+        "Q: 如果我不用 AI，会影响普通笔记吗？",
+        "A: 不会。AI 是用户主动触发的功能。即使你完全不用 AI，OrbNote 仍按本地优先与 iCloud 私有同步的方式工作。"
       ]
     },
     "download": {
-      "title": "开始使用 OrbNote",
-      "description": "在 App Store 免费下载，开启你的私密笔记之旅。",
+      "title": "开始使用 OrbNote 2.0",
+      "description": "先免费下载体验普通笔记；升级 OrbNote Pro 后，可开启 AI 保存，让 AI 在你需要时帮你整理成可长期积累的笔记。",
       "links": [
         {
           "text": "App Store 下载"
-        },
-        {
-          "text": "查看定价"
         }
       ]
     }

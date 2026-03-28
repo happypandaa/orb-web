@@ -32,6 +32,9 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
 
   const isDark = theme === 'dark';
   const themeClasses = getThemeClasses(theme);
+  const gridClass = items.length === 2
+    ? 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto'
+    : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
 
   return (
     <section id={data.id} className={`py-[var(--section-padding)] ${themeClasses.bg}`}>
@@ -44,7 +47,14 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
-
+          {eyebrow && (
+            <motion.p
+              className="text-[#0071e3] body-small font-semibold uppercase tracking-[0.18em] mb-4"
+              variants={staggerItem}
+            >
+              {eyebrow}
+            </motion.p>
+          )}
 
           <motion.h2
             className="headline-secondary mb-4"
@@ -68,7 +78,7 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
 
         {/* 网格展示 */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className={gridClass}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -78,7 +88,7 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
             <motion.div
               key={item.id}
               className={`
-                group rounded-3xl overflow-hidden
+                group rounded-[24px] overflow-hidden
                 ${themeClasses.card}
                 transition-transform duration-300 hover:scale-[1.02]
               `}
@@ -86,14 +96,14 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
             >
               {/* 媒体 */}
               {item.media && (
-                <div className="aspect-[4/3] overflow-hidden p-8 bg-gray-50/50">
+                <div className="aspect-[4/3] overflow-hidden p-3 md:p-4 bg-gray-50/40">
                   {item.media.type === 'image' && (
                     <Image
                       src={item.media.src}
                       alt={item.media.alt || item.title}
                       width={item.media.width || 600}
                       height={item.media.height || 450}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain rounded-[18px] transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   )}
                 </div>

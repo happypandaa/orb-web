@@ -2,7 +2,7 @@
 
 import { SectionRenderer } from "@/components/sections/SectionRenderer";
 import { useLocale } from "@/context/LocaleContext";
-import { siteConfig } from "@/config/content";
+import { getSiteConfig } from "@/config/content";
 import type {
   PageContent,
   Section,
@@ -91,9 +91,10 @@ function mergeSection(config: SectionConfig, content: SectionContent): Section {
 }
 
 export default function Home() {
-  const { content } = useLocale();
+  const { content, locale } = useLocale();
 
   const pageContent = content as unknown as PageContent;
+  const siteConfig = getSiteConfig(locale);
 
   // Merge config and content
   // We need to ensure we map over the CONFIG sections to preserve order
@@ -108,4 +109,3 @@ export default function Home() {
 
   return <SectionRenderer sections={sections} />;
 }
-

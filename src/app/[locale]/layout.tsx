@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
 import { LocaleProvider } from "@/context/LocaleContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -9,18 +7,35 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locals } from '@/i18n/config';
 
-const inter = Inter({
-    subsets: ["latin"],
-    display: "swap",
-});
-
-export const metadata: Metadata = {
-    title: "OrbNote - Your Intelligent Conversational Notebook",
-    description: "Capture inspiration instantly, keep data absolutely private. Built on native Apple technology, designed for deep recording and long-term privacy.",
+type LocaleMessages = {
+    meta?: {
+        title?: string;
+        description?: string;
+    };
 };
 
 export async function generateStaticParams() {
     return locals.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+
+    if (!locals.includes(locale as any)) {
+        return {};
+    }
+
+    setRequestLocale(locale);
+    const messages = await getMessages() as LocaleMessages;
+
+    return {
+        title: messages.meta?.title || "OrbNote",
+        description: messages.meta?.description || "OrbNote"
+    };
 }
 
 export default async function RootLayout({
@@ -44,16 +59,12 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className="scroll-smooth">
-            <body className={`${inter.className} antialiased`}>
-                <NextIntlClientProvider messages={messages}>
-                    <LocaleProvider>
-                        <Header />
-                        <main>{children}</main>
-                        <Footer />
-                    </LocaleProvider>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+        <NextIntlClientProvider messages={messages}>
+            <LocaleProvider>
+                <Header />
+                <main>{children}</main>
+                <Footer />
+            </LocaleProvider>
+        </NextIntlClientProvider>
     );
 }

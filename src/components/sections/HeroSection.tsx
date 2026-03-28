@@ -17,9 +17,9 @@ interface HeroSectionProps {
 
 export function HeroSection({ data }: HeroSectionProps) {
   const { title, subtitle, description, media, links, theme = 'dark' } = data;
-  
+
   const isDark = theme === 'dark';
-  
+
   // 获取背景样式
   const getThemeClasses = () => {
     switch (theme) {
@@ -31,25 +31,25 @@ export function HeroSection({ data }: HeroSectionProps) {
         return 'bg-white text-[#1d1d1f]';
     }
   };
-  
+
   return (
-    <section 
+    <section
       id={data.id}
       className={`
-        relative min-h-screen flex flex-col items-center justify-center overflow-hidden
+        relative min-h-[calc(100vh-3rem)] flex flex-col items-center justify-start overflow-hidden
         ${getThemeClasses()}
       `}
     >
       {/* 内容区域 */}
-      <motion.div 
-        className="relative z-10 section-container text-center pt-20 pb-6"
+      <motion.div
+        className="relative z-10 section-container text-center pt-14 md:pt-20 pb-4"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
       >
         {/* 副标题/眉标 */}
         {subtitle && (
-          <motion.p 
+          <motion.p
             className={`
               body-medium mb-4
               ${isDark ? 'text-white/70' : 'text-[#86868b]'}
@@ -59,21 +59,20 @@ export function HeroSection({ data }: HeroSectionProps) {
             {subtitle}
           </motion.p>
         )}
-        
+
         {/* 主标题 */}
-        <motion.h1 
-          className="headline-super mb-6"
+        <motion.h1
+          className="mx-auto mb-6 max-w-[16ch] text-[clamp(34px,5.8vw,72px)] font-semibold leading-[1.02] tracking-[-0.04em] md:whitespace-nowrap"
           variants={staggerItem}
-          style={{ whiteSpace: 'pre-line' }}
         >
           {title}
         </motion.h1>
-        
+
         {/* 描述文字 */}
         {description && (
-          <motion.p 
+          <motion.p
             className={`
-              body-large max-w-3xl mx-auto mb-10
+              body-large max-w-3xl mx-auto mb-7
               ${isDark ? 'text-white/80' : 'text-[#1d1d1f]/80'}
             `}
             variants={staggerItem}
@@ -81,11 +80,11 @@ export function HeroSection({ data }: HeroSectionProps) {
             {description}
           </motion.p>
         )}
-        
+
         {/* 按钮/链接 */}
         {links && links.length > 0 && (
-          <motion.div 
-            className="flex flex-wrap items-center justify-center gap-4 mb-12"
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-4 mb-7"
             variants={staggerItem}
           >
             {links.map((link, index) => (
@@ -99,13 +98,13 @@ export function HeroSection({ data }: HeroSectionProps) {
                   px-7 py-3 rounded-full
                   text-[17px] font-medium
                   transition-all duration-300
-                  ${link.variant === 'primary' 
-                    ? 'bg-[#0071e3] text-white hover:bg-[#0077ed]' 
+                  ${link.variant === 'primary'
+                    ? 'bg-[#0071e3] text-white hover:bg-[#0077ed]'
                     : link.variant === 'secondary'
-                    ? isDark 
-                      ? 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
-                      : 'bg-black/5 text-[#1d1d1f] hover:bg-black/10'
-                    : 'text-[#0071e3] hover:underline'
+                      ? isDark
+                        ? 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
+                        : 'bg-black/5 text-[#1d1d1f] hover:bg-black/10'
+                      : 'text-[#0071e3] hover:underline'
                   }
                 `}
               >
@@ -118,11 +117,11 @@ export function HeroSection({ data }: HeroSectionProps) {
           </motion.div>
         )}
       </motion.div>
-      
+
       {/* 产品展示图片 - 放在标题下方 */}
       {media && (
-        <motion.div 
-          className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-10"
+        <motion.div
+          className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-6 mt-0 md:mt-2"
           initial="hidden"
           animate="visible"
           variants={scaleIn}
@@ -150,9 +149,9 @@ export function HeroSection({ data }: HeroSectionProps) {
           )}
         </motion.div>
       )}
-      
+
       {/* 滚动提示 */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

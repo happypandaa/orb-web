@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl">
+      <header className="sticky top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl">
         <nav className="max-w-[1200px] mx-auto px-6 h-12 flex items-center justify-between">
           {/* Logo */}
           <Link

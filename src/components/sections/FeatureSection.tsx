@@ -68,6 +68,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
 
   const isDark = theme === 'dark';
   const themeClasses = getThemeClasses(theme);
+  const isCompactScreenshot = data.id === 'ai-workflow';
 
   // 居中布局
   if (layout === 'center') {
@@ -114,6 +115,15 @@ export function FeatureSection({ data }: FeatureSectionProps) {
           )}
 
 
+
+          {eyebrow && (
+            <motion.p
+              className="text-[#0071e3] body-small font-semibold uppercase tracking-[0.18em] mb-4"
+              variants={staggerItem}
+            >
+              {eyebrow}
+            </motion.p>
+          )}
 
           {/* 标题 */}
           <motion.h2
@@ -206,7 +216,14 @@ export function FeatureSection({ data }: FeatureSectionProps) {
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-
+            {eyebrow && (
+              <motion.p
+                className="text-[#0071e3] body-small font-semibold uppercase tracking-[0.18em] mb-4"
+                variants={staggerItem}
+              >
+                {eyebrow}
+              </motion.p>
+            )}
 
             <motion.h2
               className="headline-tertiary mb-6"
@@ -255,14 +272,19 @@ export function FeatureSection({ data }: FeatureSectionProps) {
               viewport={{ once: true, amount: 0.3 }}
               variants={isLeft ? fadeInRight : fadeInLeft}
             >
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div
+                className={`
+                  rounded-[24px] overflow-hidden shadow-xl bg-[#f5f5f7] p-2 md:p-3
+                  ${isCompactScreenshot ? 'max-w-[320px] md:max-w-[360px] mx-auto' : ''}
+                `}
+              >
                 {media.type === 'image' && (
                   <Image
                     src={media.src}
                     alt={media.alt || ''}
                     width={media.width || 800}
                     height={media.height || 600}
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-[18px]"
                   />
                 )}
                 {media.type === 'video' && (
@@ -273,7 +295,7 @@ export function FeatureSection({ data }: FeatureSectionProps) {
                     muted
                     loop
                     playsInline
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-[18px]"
                   />
                 )}
               </div>
