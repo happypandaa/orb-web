@@ -40,14 +40,14 @@ const homepageSections: SectionConfig[] = [
     id: "privacy",
     type: "feature",
     layout: "center",
-    theme: "gray",
+    theme: "light",
     icons: ["/images/icloud.svg"]
   },
   {
     id: "privacy-e2ee",
     type: "feature",
     layout: "center",
-    theme: "light",
+    theme: "gray",
     icons: ["/images/lock.svg"],
     links: [{ href: "https://support.apple.com/HT212520", variant: "text" }]
   },
@@ -61,7 +61,7 @@ const homepageSections: SectionConfig[] = [
   {
     id: "faq",
     type: "text",
-    theme: "light"
+    theme: "gray"
   },
   {
     id: "download",
