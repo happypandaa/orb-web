@@ -12,6 +12,7 @@ import {
   isArticleLocale,
 } from "@/lib/articles";
 import { getArticlesPath, getArticlesUrl } from "@/lib/routes";
+import { getWikiPage } from "@/lib/wiki";
 
 const siteUrl = "https://www.orbnote.app";
 
@@ -21,6 +22,9 @@ const articleCopy = {
     read: "min read",
     updated: "Updated",
     switchLanguage: "阅读中文版",
+    relatedTitle: "Continue reading",
+    articleLabel: "Article",
+    guideLabel: "Guide",
     ctaTitle: "Capture first. Organize when it helps.",
     ctaBody: "OrbNote keeps text, photos, voice, files, and AI-assisted organization in one private notebook.",
     ctaLink: "Download on the App Store",
@@ -30,6 +34,9 @@ const articleCopy = {
     read: "分钟阅读",
     updated: "更新于",
     switchLanguage: "Read in English",
+    relatedTitle: "接下来可以看",
+    articleLabel: "文章",
+    guideLabel: "教程",
     ctaTitle: "先记录，在真正有用时再整理。",
     ctaBody: "OrbNote 把文字、图片、语音、文件和 AI 智能整理放进同一个私密笔记本。",
     ctaLink: "在 App Store 下载",
@@ -112,6 +119,12 @@ export default async function ArticlePage({
   const copy = articleCopy[locale];
   const otherLocale = locale === "en" ? "zh" : "en";
   const translatedArticle = getArticle(otherLocale, slug);
+  const relatedArticles = article.relatedArticles
+    .map((relatedSlug) => getArticle(locale, relatedSlug))
+    .filter((relatedArticle) => relatedArticle !== null);
+  const relatedWikiPages = article.relatedWiki
+    .map((wikiSlug) => getWikiPage(locale, wikiSlug))
+    .filter((wikiPage) => wikiPage !== null);
   const canonical = getArticlesUrl(siteUrl, locale, slug);
   const publishedDate = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
     year: "numeric",
@@ -227,22 +240,39 @@ export default async function ArticlePage({
         dangerouslySetInnerHTML={{ __html: article.html }}
       />
 
-      {article.relatedWiki.length > 0 && (
-        <nav aria-label={locale === "zh" ? "相关教程" : "Related guides"} className="mx-auto max-w-[720px] px-6 pb-12">
+      {(relatedArticles.length > 0 || relatedWikiPages.length > 0) && (
+        <nav aria-label={copy.relatedTitle} className="mx-auto max-w-[720px] px-6 pb-12">
           <div className="rounded-[20px] border border-black/8 bg-white p-5 sm:p-6">
             <h2 className="text-[21px] font-semibold tracking-[-0.02em]">
-              {locale === "zh" ? "接下来可以看" : "Continue with these guides"}
+              {copy.relatedTitle}
             </h2>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {article.relatedWiki.map((wikiSlug) => (
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {relatedArticles.map((relatedArticle) => (
                 <Link
-                  key={wikiSlug}
-                  href={`/${locale}/wiki/${wikiSlug}`}
-                  className="rounded-full bg-[#f5f5f7] px-4 py-2 text-[14px] font-medium text-[#0066cc] hover:underline"
+                  key={`article-${relatedArticle.slug}`}
+                  href={getArticlesPath(locale, relatedArticle.slug)}
+                  className="rounded-[14px] bg-[#f5f5f7] px-4 py-3 transition-colors hover:bg-[#ececf0]"
                 >
-                  {wikiSlug === "quick-jot"
-                    ? locale === "zh" ? "随手记教程" : "Quick Jot guide"
-                    : locale === "zh" ? "AI 智能整理教程" : "AI Organization guide"}
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#d65313]">
+                    {copy.articleLabel}
+                  </span>
+                  <span className="mt-1 block text-[14px] font-medium leading-[1.4] text-[#1d1d1f]">
+                    {relatedArticle.title}
+                  </span>
+                </Link>
+              ))}
+              {relatedWikiPages.map((wikiPage) => (
+                <Link
+                  key={`wiki-${wikiPage.slug}`}
+                  href={`/${locale}/wiki/${wikiPage.slug}`}
+                  className="rounded-[14px] bg-[#f5f5f7] px-4 py-3 transition-colors hover:bg-[#ececf0]"
+                >
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0066cc]">
+                    {copy.guideLabel}
+                  </span>
+                  <span className="mt-1 block text-[14px] font-medium leading-[1.4] text-[#1d1d1f]">
+                    {wikiPage.title}
+                  </span>
                 </Link>
               ))}
             </div>

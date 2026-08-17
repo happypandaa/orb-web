@@ -98,7 +98,9 @@ export function getArticles(locale: ArticleLocale): ArticleMeta[] {
       return getMeta(locale, slug, data, content);
     })
     .filter((article) => !article.draft)
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+    .sort((a, b) =>
+      b.publishedAt.localeCompare(a.publishedAt) || a.title.localeCompare(b.title),
+    );
 }
 
 export function getArticle(locale: ArticleLocale, slug: string): Article | null {

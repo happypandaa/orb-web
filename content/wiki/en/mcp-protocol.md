@@ -204,6 +204,8 @@ The MCP service has dual-gate protection:
 - `orbnote_status` is the only tool that does not require per-Thread MCP access, used for connection verification.
 - All content created through MCP is tagged with `source = "mcp"` for provenance tracking.
 
+> OrbNoteMCP itself has no network entitlement, but it returns tool results to the MCP client that launched it. That client may continue by sending results to a remote model; a per-Thread allowlist does not replace evaluating the data policy of Claude, Codex, or another client.
+
 ## Practical examples
 
 ### Search notes with Claude Code

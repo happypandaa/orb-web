@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-DGFF5BZYBP";
-
-const inter = Inter({
-    subsets: ["latin"],
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     title: "OrbNote 3.0 - Capture First, Organize Later",
@@ -27,7 +21,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale || "en"} className="scroll-smooth">
-            <body className={`${inter.className} antialiased bg-[#fafafa] dark:bg-black`}>
+            <body className="antialiased bg-[#fafafa] dark:bg-black">
                 <Script
                     src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
                     strategy="afterInteractive"

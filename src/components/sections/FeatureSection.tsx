@@ -21,6 +21,7 @@ import {
   Globe,
   Share2
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import type { FeatureSection as FeatureSectionType } from '@/types/content';
 import { fadeInLeft, fadeInRight, scaleIn, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -40,7 +41,7 @@ function getThemeClasses(theme: string) {
   }
 }
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, LucideIcon> = {
   lock: Lock,
   cloud: Cloud,
   shield: Shield,

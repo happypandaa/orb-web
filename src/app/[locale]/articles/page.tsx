@@ -77,53 +77,53 @@ export default async function ArticlesPage({
   return (
     <div className="min-h-screen bg-[#f5f5f7] text-[#1d1d1f]">
       <section className="border-b border-black/5 bg-[#fbfbfd]">
-        <div className="mx-auto max-w-[1040px] px-6 py-14 sm:py-18">
-          <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#ff6a1a]">
+        <div className="mx-auto max-w-[1040px] px-6 py-10 sm:py-12">
+          <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#ff6a1a]">
             {copy.eyebrow}
           </p>
-          <h1 className="max-w-[820px] text-[38px] font-semibold leading-[1.04] tracking-[-0.04em] sm:text-[54px]">
+          <h1 className="max-w-[820px] text-[30px] font-semibold leading-[1.04] tracking-[-0.04em] sm:text-[42px]">
             {copy.title}
           </h1>
-          <p className="mt-5 max-w-[680px] text-[17px] leading-[1.55] text-[#6e6e73] sm:text-[19px]">
+          <p className="mt-4 max-w-[680px] text-[15px] leading-[1.55] text-[#6e6e73] sm:text-[17px]">
             {copy.description}
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1040px] px-6 py-8 sm:py-12">
-        <div className="grid gap-6">
+      <section className="mx-auto max-w-[1040px] px-6 py-6 sm:py-8">
+        <div className="grid gap-5">
           {articles.map((article) => (
             <article
               key={article.slug}
-              className="overflow-hidden rounded-[22px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              className="overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
             >
               <Link
                 href={getArticlesPath(locale, article.slug)}
-                className="group grid md:grid-cols-[1.05fr_0.95fr]"
+                className="group grid md:grid-cols-[0.85fr_1.15fr]"
               >
-                <div className="relative min-h-[220px] overflow-hidden bg-black md:min-h-[300px]">
+                <div className="relative min-h-[180px] overflow-hidden bg-black md:min-h-[220px]">
                   <Image
                     src={article.image}
                     alt={article.imageAlt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 56vw"
+                    sizes="(max-width: 768px) 100vw, 45vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
                     priority
                   />
                 </div>
-                <div className="flex flex-col justify-center p-6 sm:p-8">
-                  <div className="mb-4 flex flex-wrap items-center gap-3 text-[12px] text-[#86868b]">
+                <div className="flex flex-col justify-center p-5 sm:p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-3 text-[11px] text-[#86868b]">
                     <span className="font-medium text-[#ff6a1a]">{article.category}</span>
                     <span aria-hidden="true">·</span>
                     <span>{article.readingMinutes} {copy.minute}</span>
                   </div>
-                  <h2 className="text-[26px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[34px]">
+                  <h2 className="text-[21px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[26px]">
                     {article.title}
                   </h2>
-                  <p className="mt-4 text-[15px] leading-[1.58] text-[#6e6e73] sm:text-[16px]">
+                  <p className="mt-3 text-[13px] leading-[1.58] text-[#6e6e73] sm:text-[14px]">
                     {article.description}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-medium text-[#0066cc]">
+                  <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-[#0066cc]">
                     {copy.read}
                     <span aria-hidden="true">→</span>
                   </span>

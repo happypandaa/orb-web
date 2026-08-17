@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locals } from '@/i18n/config';
+import { isAppLocale, locals } from '@/i18n/config';
 
 type LocaleMessages = {
     meta?: {
@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const { locale } = await params;
 
-    if (!locals.includes(locale as any)) {
+    if (!isAppLocale(locale)) {
         return {};
     }
 
@@ -47,7 +47,7 @@ export default async function RootLayout({
 }) {
     const { locale } = await params;
     // Validate that the incoming `locale` parameter is valid
-    if (!locals.includes(locale as any)) {
+    if (!isAppLocale(locale)) {
         notFound();
     }
 

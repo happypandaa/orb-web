@@ -56,7 +56,8 @@ export function getPreferredLocale(acceptLanguage?: string): Locale {
 export function getBrowserLocale(): Locale {
   if (typeof window === 'undefined') return defaultLocale;
 
-  const browserLang = navigator.language || (navigator as any).userLanguage;
+  const legacyNavigator = navigator as Navigator & { userLanguage?: string };
+  const browserLang = navigator.language || legacyNavigator.userLanguage;
   if (!browserLang) return defaultLocale;
 
   const code = browserLang.toLowerCase();
@@ -74,4 +75,3 @@ export function getBrowserLocale(): Locale {
 
   return defaultLocale;
 }
-

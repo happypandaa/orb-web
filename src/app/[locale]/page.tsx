@@ -14,13 +14,9 @@ import type {
   LinkConfig,
   LinkContent,
   LinkItem,
-  HeroSectionConfig,
   HeroSectionContent,
-  FeatureSectionConfig,
   FeatureSectionContent,
-  CTASectionConfig,
   CTASectionContent,
-  TextSectionConfig,
   TextSectionContent
 } from "@/types/content";
 

@@ -7,7 +7,7 @@
 
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import type { StatsSection as StatsSectionType, StatItem } from '@/types/content';
+import type { StatsSection as StatsSectionType } from '@/types/content';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
 interface StatsSectionProps {
