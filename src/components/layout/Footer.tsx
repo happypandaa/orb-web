@@ -8,11 +8,18 @@
 import { useLocale } from '@/context/LocaleContext';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getArticlesPath } from '@/lib/routes';
 
 export function Footer() {
   const { content, locale } = useLocale();
 
   const links = [
+    ...(locale === 'en' || locale === 'zh'
+      ? [
+          { label: content.nav.articles, href: getArticlesPath(locale) },
+          { label: content.nav.wiki, href: `/${locale}/wiki` },
+        ]
+      : []),
     { label: content.footer.privacy, href: `/${locale}/privacy` },
     { label: content.footer.terms, href: `/${locale}/terms` },
     { label: content.footer.support, href: `/${locale}/support` },

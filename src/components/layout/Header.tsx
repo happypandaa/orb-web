@@ -2,37 +2,64 @@
 
 /**
  * 网站头部导航
- * 简洁导航栏，始终显示
+ * 顶栏只放页面级入口（首页 / Wiki / 文章 / 下载），跨页行为一致
  */
 
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { useLocale } from '@/context/LocaleContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { getArticlesPath } from '@/lib/routes';
+import { APP_STORE_URL } from '@/config/content';
+
+interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+function NavAnchor({
+  item,
+  className,
+  onClick,
+}: {
+  item: NavItem;
+  className?: string;
+  onClick?: () => void;
+}) {
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        className={className}
+        onClick={onClick}
+        rel="noopener noreferrer"
+      >
+        {item.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={item.href} className={className} onClick={onClick}>
+      {item.label}
+    </Link>
+  );
+}
 
 export function Header() {
   const { content, locale } = useLocale();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
 
-  // If we are not on the home page (e.g. /en or /zh), we need to prefix anchors with the home path
-  // pathname might be "/en", "/en/", "/zh/privacy"
-  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
-
-  const getHref = (anchor: string) => {
-    if (isHomePage) {
-      return anchor;
-    }
-    return `/${locale}${anchor}`;
-  };
-
-  const navigation = [
-    { label: content.nav.features, href: getHref('#features-intro') },
-    { label: content.nav.privacy, href: getHref('#privacy') },
-    { label: content.nav.faq, href: getHref('#faq') },
-    { label: content.nav.download, href: getHref('#download') },
+  const navigation: NavItem[] = [
+    { label: content.nav.home, href: `/${locale}` },
+    ...(locale === 'en' || locale === 'zh'
+      ? [
+          { label: content.nav.articles, href: getArticlesPath(locale) },
+          { label: content.nav.wiki, href: `/${locale}/wiki` },
+        ]
+      : []),
+    { label: content.nav.download, href: APP_STORE_URL, external: true },
   ];
 
   return (
@@ -57,13 +84,11 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
-              <Link
+              <NavAnchor
                 key={item.href}
-                href={item.href}
+                item={item}
                 className="text-white/80 text-[14px] hover:text-white transition-colors"
-              >
-                {item.label}
-              </Link>
+              />
             ))}
             <LanguageSwitcher />
           </div>
@@ -97,14 +122,12 @@ export function Header() {
         <div className="fixed inset-0 z-40 bg-black pt-12">
           <nav className="flex flex-col items-center justify-center h-full gap-8">
             {navigation.map((item) => (
-              <Link
+              <NavAnchor
                 key={item.href}
-                href={item.href}
+                item={item}
                 className="text-white text-[28px] font-medium hover:text-white/80 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+              />
             ))}
           </nav>
         </div>

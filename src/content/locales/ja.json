@@ -97,7 +97,10 @@
     }
   },
   "nav": {
+    "home": "ホーム",
     "features": "機能",
+    "articles": "Articles",
+    "wiki": "Wiki",
     "privacy": "プライバシー",
     "faq": "FAQ",
     "download": "ダウンロード"

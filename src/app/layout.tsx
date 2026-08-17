@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-DGFF5BZYBP";
@@ -11,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "OrbNote",
-    description: "Your Intelligent Conversational Notebook",
+    title: "OrbNote 3.0 - Capture First, Organize Later",
+    description: "A conversational notebook for capturing thoughts first and organizing them when it becomes useful.",
 };
 
 export default async function RootLayout({
@@ -39,6 +40,7 @@ export default async function RootLayout({
                         gtag('config', '${GA_MEASUREMENT_ID}');
                     `}
                 </Script>
+                <AnalyticsEvents />
                 {children}
             </body>
         </html>

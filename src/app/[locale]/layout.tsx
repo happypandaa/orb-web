@@ -57,12 +57,13 @@ export default async function RootLayout({
     // Providing all messages to the client
     // side is the easiest way to get started
     const messages = await getMessages();
+    const contentLanguage = locale === 'zh' ? 'zh-CN' : locale;
 
     return (
         <NextIntlClientProvider messages={messages}>
             <LocaleProvider>
                 <Header />
-                <main>{children}</main>
+                <main lang={contentLanguage}>{children}</main>
                 <Footer />
             </LocaleProvider>
         </NextIntlClientProvider>

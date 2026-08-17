@@ -7,12 +7,19 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { useLocale } from '@/context/LocaleContext';
-import { locales, localeNames, Locale } from '@/lib/i18n';
+import { locales, localeNames } from '@/lib/i18n';
 
 export function LanguageSwitcher() {
   const { locale, setLocale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const pathSegments = pathname.split('/').filter(Boolean);
+  const contentSection = pathSegments[0] === 'articles' ? 'articles' : pathSegments[1];
+  const availableLocales = contentSection === 'articles' || contentSection === 'wiki'
+    ? locales.filter((loc) => loc === 'en' || loc === 'zh')
+    : locales;
 
   return (
     <div className="relative">
@@ -66,7 +73,7 @@ export function LanguageSwitcher() {
               transition={{ duration: 0.15 }}
               className="absolute right-0 top-full mt-2 z-50 bg-[#1d1d1f] rounded-xl overflow-hidden shadow-xl border border-white/10 min-w-[140px]"
             >
-              {locales.map((loc) => (
+              {availableLocales.map((loc) => (
                 <button
                   key={loc}
                   onClick={() => {
@@ -91,4 +98,3 @@ export function LanguageSwitcher() {
     </div>
   );
 }
-

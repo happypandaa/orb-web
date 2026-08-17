@@ -1,9 +1,9 @@
 import type { Locale } from "@/lib/i18n";
 import { SectionConfig, SiteConfig } from "@/types/content";
 
-const APP_STORE_URL = "https://apps.apple.com/app/id6756836158";
+export const APP_STORE_URL = "https://apps.apple.com/app/id6756836158";
 
-const homepageSections: SectionConfig[] = [
+const legacyHomepageSections: SectionConfig[] = [
   {
     id: "hero",
     type: "hero",
@@ -73,6 +73,151 @@ const homepageSections: SectionConfig[] = [
   }
 ];
 
+function getModernHomepageSections(locale: Locale): SectionConfig[] {
+  const assetLocale = locale === "zh" ? "zh" : "en";
+
+  return [
+    {
+      id: "hero",
+      type: "hero",
+      layout: "center",
+      theme: "light",
+      media: {
+        type: "image",
+        src: "/images/hero/orbnote-multiplatform-v4.png",
+        width: 1586,
+        height: 992,
+        alt: locale === "zh"
+          ? "OrbNote 在 Mac、iPhone、iPad 和 Apple Watch 上运行"
+          : "OrbNote on Mac, iPhone, iPad, and Apple Watch",
+      },
+      links: [
+        { href: APP_STORE_URL, variant: "primary", external: true },
+        { href: `/${locale}/wiki`, variant: "secondary" },
+      ],
+    },
+    {
+      id: "features-intro",
+      type: "feature",
+      layout: "center",
+      theme: "dark",
+    },
+    {
+      id: "quick-jot",
+      type: "feature",
+      layout: "left",
+      theme: "light",
+      media: {
+        type: "image",
+        src: `/images/appstore/${assetLocale}/02-quick-jot.jpg`,
+        width: 1800,
+        height: 1125,
+        alt: "OrbNote Quick Jot",
+      },
+      links: [{ href: `/${locale}/wiki/quick-jot`, variant: "text" }],
+    },
+    {
+      id: "ai-organization",
+      type: "feature",
+      layout: "right",
+      theme: "gray",
+      media: {
+        type: "image",
+        src: `/images/appstore/${assetLocale}/04-ai-organization.jpg`,
+        width: 1800,
+        height: 1125,
+        alt: "OrbNote AI Organization",
+      },
+      links: [{ href: `/${locale}/wiki/ai-organization`, variant: "text" }],
+    },
+    {
+      id: "capabilities",
+      type: "showcase",
+      theme: "light",
+      items: [
+        {
+          id: "rich-content",
+          media: {
+            type: "image",
+            src: `/images/appstore/${assetLocale}/03-rich-content.jpg`,
+            width: 1800,
+            height: 1125,
+            alt: "Rich content in OrbNote",
+          },
+        },
+        {
+          id: "search",
+          media: {
+            type: "image",
+            src: `/images/appstore/${assetLocale}/05-advanced-search.jpg`,
+            width: 1800,
+            height: 1125,
+            alt: "Advanced search in OrbNote",
+          },
+        },
+      ],
+    },
+    {
+      id: "privacy",
+      type: "feature",
+      layout: "center",
+      theme: "dark",
+      icons: ["/images/lock.svg"],
+    },
+    {
+      id: "privacy-lock",
+      type: "feature",
+      layout: "left",
+      theme: "light",
+      media: {
+        type: "image",
+        src: `/images/appstore/${assetLocale}/07-password.jpg`,
+        width: 1800,
+        height: 1125,
+        alt: "Password protection in OrbNote",
+      },
+    },
+    {
+      id: "connected",
+      type: "showcase",
+      theme: "gray",
+      items: [
+        {
+          id: "icloud",
+          media: {
+            type: "image",
+            src: `/images/appstore/${assetLocale}/09-icloud.jpg`,
+            width: 1800,
+            height: 1125,
+            alt: "iCloud synchronization in OrbNote",
+          },
+        },
+        {
+          id: "watch",
+          media: {
+            type: "image",
+            src: `/images/appstore/${assetLocale}/10-watch.jpg`,
+            width: 1800,
+            height: 1125,
+            alt: "Apple Watch capture in OrbNote",
+          },
+        },
+      ],
+    },
+    {
+      id: "faq",
+      type: "text",
+      theme: "light",
+    },
+    {
+      id: "download",
+      type: "cta",
+      theme: "dark",
+      links: [{ href: APP_STORE_URL, variant: "primary", external: true }],
+    },
+  ];
+}
+
 const baseSiteConfig: Omit<SiteConfig, "sections"> = {
   name: "OrbNote",
   navigation: [
@@ -94,12 +239,14 @@ const baseSiteConfig: Omit<SiteConfig, "sections"> = {
 
 export const siteConfig: SiteConfig = {
   ...baseSiteConfig,
-  sections: homepageSections
+  sections: getModernHomepageSections("en")
 };
 
-export function getSiteConfig(_locale: Locale): SiteConfig {
+export function getSiteConfig(locale: Locale): SiteConfig {
   return {
     ...baseSiteConfig,
-    sections: homepageSections
+    sections: locale === "en" || locale === "zh"
+      ? getModernHomepageSections(locale)
+      : legacyHomepageSections
   };
 }

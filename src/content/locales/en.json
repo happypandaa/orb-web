@@ -1,12 +1,13 @@
 {
   "meta": {
-    "title": "OrbNote 2.0 - AI Save for Your Long-Term Memory",
-    "description": "Capture it now, keep it for the long term. Regular notes stay local-first with private iCloud sync; when you actively use AI Save, OrbNote helps organize content into the right thread. AI Save is an OrbNote Pro feature.",
+    "title": "OrbNote 3.0 - Capture First, Organize Later",
+    "description": "Capture thoughts as messages, keep text, photos, voice, files, and checklists together, then organize them into the right Thread when it becomes useful.",
     "keywords": [
       "OrbNote",
       "notes",
       "privacy",
-      "AI Save",
+      "Quick Jot",
+      "AI Organization",
       "iCloud",
       "Apple",
       "end-to-end encryption",
@@ -15,18 +16,21 @@
   },
   "sections": {
     "hero": {
-      "title": "Capture it now, let AI save it",
-      "description": "Local-first by default, AI when you need it. AI Save is an OrbNote Pro feature.",
+      "title": "Capture first. Organize when it helps.",
+      "description": "OrbNote 3.0 is a conversational notebook for text, photos, voice, files, and small tasks—across iPhone, Mac, iPad, and Apple Watch.",
       "links": [
         {
           "text": "Download on the App Store"
+        },
+        {
+          "text": "Read the Wiki"
         }
       ]
     },
     "privacy": {
-      "eyebrow": "🔒 Privacy & Boundaries",
-      "title": "Regular notes still belong only to you",
-      "description": "OrbNote continues to follow a local-first plus user-owned cloud model. Your regular notes, attachments, and synced data primarily stay on your devices and in your own iCloud account. We do not run a backend database for storing that content."
+      "eyebrow": "🔒 Private by design",
+      "title": "Personal memory should stay personal",
+      "description": "OrbNote is local-first and uses your own iCloud account for synchronization. Sensitive Threads can be protected with a password, while AI features remain optional and clearly separated from ordinary capture."
     },
     "privacy-e2ee": {
       "eyebrow": "Privacy for regular notes",
@@ -39,9 +43,64 @@
       ]
     },
     "features-intro": {
-      "eyebrow": "🤖 AI Save",
-      "title": "AI organizes your notes instead of chatting endlessly",
-      "description": "Type a sentence, paste an image, or speak a quick voice note. OrbNote first suggests how it should be saved: which group, which thread, and how the title and body should be structured."
+      "eyebrow": "OrbNote 3.0",
+      "title": "A calmer path from a fleeting thought to long-term memory",
+      "description": "Save the thought immediately, keep its context, find it again, and add structure only when structure creates value."
+    },
+    "quick-jot": {
+      "eyebrow": "Quick Jot",
+      "title": "Catch the idea before the filing decision interrupts it",
+      "description": "Quick Jot is a built-in inbox for thoughts and drafts. Start with one sentence, then add a photo, recording, file, or checklist in the same timeline.",
+      "links": [
+        {
+          "text": "How to use Quick Jot"
+        }
+      ]
+    },
+    "ai-organization": {
+      "eyebrow": "AI Organization · Pro",
+      "title": "Save it first. Let AI suggest where it belongs.",
+      "description": "After capture, AI Organization can recommend a suitable Thread and explain why. Review the suggestion, ignore it, or use the automatic option you chose in settings.",
+      "links": [
+        {
+          "text": "How AI Organization works"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Keep and find more",
+      "title": "Not just text—and not just title search",
+      "description": "Keep different kinds of context together, then search messages, attachments, OCR text, recordings, and imported reading content.",
+      "items": {
+        "rich-content": {
+          "title": "Rich content in one history",
+          "description": "Text, photos, files, voice, and checklists stay close to the idea that connects them."
+        },
+        "search": {
+          "title": "Search that explains the match",
+          "description": "Find the exact message or attachment and understand whether text, OCR, audio, or an imported article matched."
+        }
+      }
+    },
+    "privacy-lock": {
+      "eyebrow": "Password protection · Pro",
+      "title": "Add another boundary around important Threads",
+      "description": "Protect selected Threads with a password when a device-level lock is not enough for the material you keep."
+    },
+    "connected": {
+      "eyebrow": "One notebook across Apple devices",
+      "title": "Capture where the idea happens. Continue where it is comfortable.",
+      "description": "Use your own iCloud account to stay up to date, and start a recording from Apple Watch when your phone or Mac is not nearby.",
+      "items": {
+        "icloud": {
+          "title": "Your iCloud, your synchronized notes",
+          "description": "Keep the same conversational notebook available across iPhone, Mac, and iPad."
+        },
+        "watch": {
+          "title": "Start on your wrist",
+          "description": "Capture a voice thought on Apple Watch, then continue organizing it on a larger device."
+        }
+      }
     },
     "ai-workflow": {
       "eyebrow": "3 steps to get organized",
@@ -72,23 +131,19 @@
       "eyebrow": "FAQ",
       "title": "Frequently asked questions",
       "body": [
-        "Q: Does OrbNote store what I send to AI?",
-        "A: Not as persisted user content. AI requests only pass briefly through OrbNote's stateless gateway for authentication, rate limiting, routing, and forwarding. Redis stores only de-identified technical identifiers and counters needed for rate limiting, not note content, prompt text, image content, or attachment body text.",
-        "Q: Will AI automatically change my original content?",
-        "A: No. AI first generates a save suggestion. Content is written into the target thread only after you confirm it.",
-        "Q: Does AI read all of my notes?",
-        "A: No. AI only processes the content you actively submit, plus the limited context needed to determine where it should be saved. Your regular notes still primarily remain on your devices and in iCloud.",
-        "Q: Will upstream AI services use my content to train their models?",
-        "A: We prioritize commercial AI services with strict privacy commitments. According to their public policies, API request content is not used to train general models, and we prefer service modes that do not retain content or retain only short-term safety data when necessary.",
-        "Q: Is AI Save included for free?",
-        "A: No. AI Save is currently an OrbNote Pro feature. You can still use regular notes, local-first storage, and private iCloud sync without it. Upgrade to OrbNote Pro to enable AI Save.",
-        "Q: What happens if I never use AI?",
-        "A: Nothing changes for your regular notes. AI is only triggered when you explicitly use it. OrbNote still works with a local-first and private iCloud sync model."
+        "Q: Do I need to organize every message immediately?",
+        "A: No. Quick Jot is designed for capture first. Move messages into Threads when the destination becomes useful or leave them in the inbox until a pattern appears.",
+        "Q: Is AI Organization required?",
+        "A: No. You can always organize manually. AI Organization is an optional OrbNote Pro feature that suggests a suitable Thread after capture.",
+        "Q: Where are my ordinary notes stored?",
+        "A: OrbNote is local-first and uses your own iCloud account for synchronization across Apple devices.",
+        "Q: Can OrbNote keep more than text?",
+        "A: Yes. A conversation can include supported photos, voice recordings, files, and checklists alongside text."
       ]
     },
     "download": {
-      "title": "Start using OrbNote 2.0",
-      "description": "Download it for free to try regular notes first. Upgrade to OrbNote Pro when you want AI Save to help organize notes you plan to keep.",
+      "title": "Start using OrbNote 3.0",
+      "description": "Capture the next thought without stopping to design a system first. Add structure when it starts helping you remember.",
       "links": [
         {
           "text": "Download on the App Store"
@@ -97,13 +152,16 @@
     }
   },
   "nav": {
+    "home": "Home",
     "features": "Features",
+    "articles": "Articles",
+    "wiki": "Wiki",
     "privacy": "Privacy",
     "faq": "FAQ",
     "download": "Download"
   },
   "footer": {
-    "copyright": "Copyright © 2024 OrbNote. All rights reserved.",
+    "copyright": "Copyright © 2026 OrbNote. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "support": "Support",

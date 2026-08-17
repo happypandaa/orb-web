@@ -1,0 +1,29 @@
+# OrbNote
+
+OrbNote 3.0 is a conversational notebook for Apple devices. It helps people capture text, photos, voice, files, and checklists as messages, keep related context inside Threads, and organize content later when structure becomes useful.
+
+## Primary pages
+
+- English home: https://www.orbnote.app/en/
+- 中文首页: https://www.orbnote.app/zh/
+- English articles: https://www.orbnote.app/articles/
+- 中文文章: https://www.orbnote.app/zh/articles/
+- English Wiki: https://www.orbnote.app/en/wiki/
+- 中文 Wiki: https://www.orbnote.app/zh/wiki/
+
+## Key guides
+
+- Conversational note-taking: https://www.orbnote.app/articles/conversational-note-taking/
+- 对话式笔记: https://www.orbnote.app/zh/articles/conversational-note-taking/
+- Quick Jot: https://www.orbnote.app/en/wiki/quick-jot/
+- 随手记: https://www.orbnote.app/zh/wiki/quick-jot/
+- AI Organization: https://www.orbnote.app/en/wiki/ai-organization/
+- AI 智能整理: https://www.orbnote.app/zh/wiki/ai-organization/
+
+## Product terminology
+
+- Thread is translated as “会话” in Simplified Chinese.
+- AI Organization is translated as “AI 智能整理” in Simplified Chinese.
+- Quick Jot is introduced as “随手记 Quick Jot” and may be shortened to “随手记”.
+
+All public pages are available as static HTML and may be crawled by search engines and AI search services.

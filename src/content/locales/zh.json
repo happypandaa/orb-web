@@ -1,12 +1,13 @@
 {
   "meta": {
-    "title": "OrbNote 2.0 - AI 保存与你的长期记忆工具",
-    "description": "像聊天一样记下内容，像知识库一样长期积累。普通笔记仍坚持本地优先与 iCloud 私有同步；当你主动使用 AI 保存时，OrbNote 会帮你整理并归档到更合适的会话。AI 保存现为 OrbNote Pro 能力。",
+    "title": "OrbNote 3.0 - 先记录，再整理的对话式笔记",
+    "description": "把想法像消息一样先记下来，让文字、图片、语音、文件和清单共享上下文，再在真正有用时整理到合适的会话。",
     "keywords": [
       "OrbNote",
       "笔记",
       "隐私",
-      "AI 保存",
+      "随手记",
+      "AI 智能整理",
       "iCloud",
       "Apple",
       "端到端加密",
@@ -15,18 +16,21 @@
   },
   "sections": {
     "hero": {
-      "title": "记下内容，交给 AI 保存",
-      "description": "本地优先记录，AI 按需整理。AI 保存为 OrbNote Pro 能力。",
+      "title": "先记录，在真正有用时再整理",
+      "description": "OrbNote 3.0 是一个对话式笔记本，让文字、图片、语音、文件和小任务在 iPhone、Mac、iPad 与 Apple Watch 之间自然延续。",
       "links": [
         {
           "text": "App Store 下载"
+        },
+        {
+          "text": "查看 Wiki"
         }
       ]
     },
     "privacy": {
-      "eyebrow": "🔒 隐私与边界",
-      "title": "普通笔记仍然只属于你",
-      "description": "OrbNote 继续坚持「本地优先 + 用户私有云」。普通笔记、附件与同步数据主要保存在你的设备和你自己的 iCloud 中。我们没有用于存储这些内容的用户后台数据库。"
+      "eyebrow": "🔒 隐私来自设计",
+      "title": "个人记忆，本来就应该只属于你",
+      "description": "OrbNote 坚持本地优先，并使用你自己的 iCloud 账户同步。敏感会话可以增加密码保护，AI 功能保持可选，并与普通记录清楚分开。"
     },
     "privacy-e2ee": {
       "eyebrow": "普通笔记的隐私保护",
@@ -39,9 +43,64 @@
       ]
     },
     "features-intro": {
-      "eyebrow": "🤖 AI 保存",
-      "title": "AI 帮你整理，而不是替你闲聊",
-      "description": "输入一句话、贴一张图，或者说一句语音。OrbNote 会先给出保存建议：应该放进哪个分组、进入哪个会话、标题和正文怎么整理更合适。"
+      "eyebrow": "OrbNote 3.0",
+      "title": "让一闪而过的想法，更平静地变成长期记忆",
+      "description": "先立即保存，再保留上下文、重新找到它，只在结构能够产生价值时才开始整理。"
+    },
+    "quick-jot": {
+      "eyebrow": "随手记 Quick Jot",
+      "title": "别让归档决定打断刚刚出现的想法",
+      "description": "随手记是内置的想法收件箱。先写一句话，再在同一条时间线里加入照片、录音、文件或清单。",
+      "links": [
+        {
+          "text": "查看随手记教程"
+        }
+      ]
+    },
+    "ai-organization": {
+      "eyebrow": "AI 智能整理 · Pro",
+      "title": "先保存，再让 AI 建议它属于哪个会话",
+      "description": "记录完成后，AI 智能整理可以建议合适的会话并说明原因。你可以采用、忽略，或使用自己在设置中选择的自动选项。",
+      "links": [
+        {
+          "text": "了解 AI 智能整理"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "保存更多，也能准确找回",
+      "title": "不只保存文字，也不只搜索标题",
+      "description": "不同类型的内容可以共享上下文，搜索则能覆盖消息、附件、OCR 文字、录音转写和导入的阅读内容。",
+      "items": {
+        "rich-content": {
+          "title": "丰富内容共享同一段历史",
+          "description": "文字、图片、文件、语音和清单，都能待在把它们联系起来的想法附近。"
+        },
+        "search": {
+          "title": "能说明命中原因的搜索",
+          "description": "直接找到对应消息或附件，并了解命中的是文字、OCR、录音还是导入文章。"
+        }
+      }
+    },
+    "privacy-lock": {
+      "eyebrow": "密码保护 · Pro",
+      "title": "为重要会话再加一道边界",
+      "description": "当设备锁还不够时，可以为选定会话增加密码保护，让敏感内容与普通记录保持距离。"
+    },
+    "connected": {
+      "eyebrow": "一套笔记，贯穿 Apple 全设备",
+      "title": "想法在哪里出现，就在哪里记录",
+      "description": "使用自己的 iCloud 账户保持同步；当手机和 Mac 不在手边，也可以从 Apple Watch 开始录音。",
+      "items": {
+        "icloud": {
+          "title": "你的 iCloud，你的同步笔记",
+          "description": "让同一套对话式笔记在 iPhone、Mac 和 iPad 之间保持更新。"
+        },
+        "watch": {
+          "title": "从手腕开始记录",
+          "description": "先在 Apple Watch 说出想法，再回到更大的设备继续整理。"
+        }
+      }
     },
     "ai-workflow": {
       "eyebrow": "3 步完成整理",
@@ -72,23 +131,19 @@
       "eyebrow": "常见问题",
       "title": "FAQ",
       "body": [
-        "Q: OrbNote 会保存我发送给 AI 的内容吗？",
-        "A: 不会作为用户内容持久化保存。AI 请求只会在你主动使用 AI 时短暂经过 OrbNote 的无状态网关，用于鉴权、限流、路由和转发。Redis 仅保存限流所需的去标识化技术标识和计数，不保存笔记内容、提示词正文、图片内容或附件正文。",
-        "Q: AI 会不会自动改动我的原始内容？",
-        "A: 不会。AI 会先生成保存建议，只有你确认后，内容才会真正写入对应的会话。",
-        "Q: AI 会不会读取我所有笔记？",
-        "A: 不会。AI 只会处理你主动提交的内容，以及为了判断保存位置所需的有限上下文。普通笔记数据仍然主要保存在你的设备和 iCloud 中。",
-        "Q: 上游 AI 服务会不会拿我的内容训练模型？",
-        "A: 我们优先选用具备严格隐私承诺的商用 AI 服务。根据其公开政策，API 请求内容不会被用于训练通用模型；我们也优先使用不保留内容，或仅保留必要短期安全数据的服务模式。",
-        "Q: AI 保存是免费功能吗？",
-        "A: 不是。AI 保存现为 OrbNote Pro 能力。你仍然可以使用普通笔记、本地优先存储与 iCloud 私有同步；升级 OrbNote Pro 后可开启 AI 保存。",
-        "Q: 如果我不用 AI，会影响普通笔记吗？",
-        "A: 不会。AI 是用户主动触发的功能。即使你完全不用 AI，OrbNote 仍按本地优先与 iCloud 私有同步的方式工作。"
+        "Q: 每条消息都需要立即整理吗？",
+        "A: 不需要。随手记就是为了先记录。位置真正有用时再移动到会话，也可以等规律出现后集中整理。",
+        "Q: 必须使用 AI 智能整理吗？",
+        "A: 不需要。你始终可以手动整理。AI 智能整理是可选的 OrbNote Pro 功能，会在记录后建议合适的会话。",
+        "Q: 普通笔记保存在哪里？",
+        "A: OrbNote 坚持本地优先，并使用你自己的 iCloud 账户在 Apple 设备之间同步。",
+        "Q: 除了文字还能保存什么？",
+        "A: 支持的图片、语音录音、文件和清单都可以和文字一起出现在会话里。"
       ]
     },
     "download": {
-      "title": "开始使用 OrbNote 2.0",
-      "description": "先免费下载体验普通笔记；升级 OrbNote Pro 后，可开启 AI 保存，让 AI 在你需要时帮你整理成可长期积累的笔记。",
+      "title": "开始使用 OrbNote 3.0",
+      "description": "先接住下一个想法，不必马上设计完整系统。等结构开始帮助记忆时，再进行整理。",
       "links": [
         {
           "text": "App Store 下载"
@@ -97,13 +152,16 @@
     }
   },
   "nav": {
+    "home": "首页",
     "features": "功能",
+    "articles": "文章",
+    "wiki": "Wiki",
     "privacy": "隐私",
     "faq": "FAQ",
     "download": "下载"
   },
   "footer": {
-    "copyright": "Copyright © 2024 OrbNote. 保留所有权利。",
+    "copyright": "Copyright © 2026 OrbNote. 保留所有权利。",
     "privacy": "隐私政策",
     "terms": "使用条款",
     "support": "支持",

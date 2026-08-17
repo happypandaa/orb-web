@@ -24,6 +24,13 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   const setLocale = (newLocale: Locale) => {
+    const articleMatch = pathname.match(/^\/(?:(en|zh)\/)?articles(\/.*)?$/);
+    if (articleMatch) {
+      const suffix = articleMatch[2] || '';
+      router.push(newLocale === 'en' ? `/articles${suffix}` : `/${newLocale}/articles${suffix}`);
+      return;
+    }
+
     // pathname e.g. /en/privacy or /en
     const segments = pathname.split('/');
     // segments[0] is empty, segments[1] is locale

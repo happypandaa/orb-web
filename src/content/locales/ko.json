@@ -97,7 +97,10 @@
     }
   },
   "nav": {
+    "home": "홈",
     "features": "기능",
+    "articles": "Articles",
+    "wiki": "Wiki",
     "privacy": "프라이버시",
     "faq": "FAQ",
     "download": "다운로드"
