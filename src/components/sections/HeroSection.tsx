@@ -42,7 +42,7 @@ export function HeroSection({ data }: HeroSectionProps) {
     >
       {/* 内容区域 */}
       <motion.div
-        className="relative z-10 section-container text-center pt-14 md:pt-20 pb-4"
+        className="relative z-10 section-container flex w-full flex-col items-center text-center pt-14 md:pt-20 pb-4"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -51,7 +51,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         {subtitle && (
           <motion.p
             className={`
-              body-medium mb-4
+              body-medium mx-auto mb-4 text-center
               ${isDark ? 'text-white/70' : 'text-[#86868b]'}
             `}
             variants={staggerItem}
@@ -62,7 +62,7 @@ export function HeroSection({ data }: HeroSectionProps) {
 
         {/* 主标题 */}
         <motion.h1
-          className="mx-auto mb-6 max-w-[16ch] text-[clamp(34px,5.8vw,72px)] font-semibold leading-[1.02] tracking-[-0.04em] md:whitespace-nowrap"
+          className="mx-auto mb-6 w-full max-w-5xl text-center text-[clamp(34px,5.8vw,72px)] font-semibold leading-[1.02] tracking-[-0.04em] [text-wrap:balance]"
           variants={staggerItem}
         >
           {title}
@@ -121,7 +121,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       {/* 产品展示图片 - 放在标题下方 */}
       {media && (
         <motion.div
-          className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-6 mt-0 md:mt-2"
+          className="relative z-10 mx-auto mt-2 w-full max-w-[1480px] px-5 pb-10 pt-2 sm:px-8 md:mt-4 md:px-12 md:pb-12 lg:px-16 xl:px-20"
           initial="hidden"
           animate="visible"
           variants={scaleIn}
@@ -132,7 +132,7 @@ export function HeroSection({ data }: HeroSectionProps) {
               alt={media.alt || ''}
               width={media.width || 1200}
               height={media.height || 800}
-              className="w-full h-auto"
+              className="mx-auto block h-auto w-full object-contain drop-shadow-[0_22px_42px_rgba(0,0,0,0.08)]"
               priority
             />
           )}

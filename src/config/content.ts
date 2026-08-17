@@ -84,9 +84,9 @@ function getModernHomepageSections(locale: Locale): SectionConfig[] {
       theme: "light",
       media: {
         type: "image",
-        src: "/images/hero/orbnote-multiplatform-v4.png",
-        width: 1586,
-        height: 992,
+        src: "/images/hero/orbnote-multiplatform-group-v1.png",
+        width: 3134,
+        height: 1351,
         alt: locale === "zh"
           ? "OrbNote 在 Mac、iPhone、iPad 和 Apple Watch 上运行"
           : "OrbNote on Mac, iPhone, iPad, and Apple Watch",
@@ -196,9 +196,9 @@ function getModernHomepageSections(locale: Locale): SectionConfig[] {
           id: "watch",
           media: {
             type: "image",
-            src: `/images/appstore/${assetLocale}/10-watch.jpg`,
-            width: 1800,
-            height: 1125,
+            src: "/images/apple-watch-recording.png",
+            width: 270,
+            height: 430,
             alt: "Apple Watch capture in OrbNote",
           },
         },

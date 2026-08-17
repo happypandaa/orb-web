@@ -96,14 +96,21 @@ export function ShowcaseSection({ data }: ShowcaseSectionProps) {
             >
               {/* 媒体 */}
               {item.media && (
-                <div className="aspect-[4/3] overflow-hidden p-3 md:p-4 bg-gray-50/40">
+                <div className={`aspect-[4/3] overflow-hidden bg-gray-50/40 ${
+                  item.id === 'watch'
+                    ? 'flex items-center justify-center p-6 sm:p-7 md:p-8'
+                    : 'p-3 md:p-4'
+                }`}>
                   {item.media.type === 'image' && (
                     <Image
                       src={item.media.src}
                       alt={item.media.alt || item.title}
                       width={item.media.width || 600}
                       height={item.media.height || 450}
-                      className="w-full h-full object-contain rounded-[18px] transition-transform duration-500 group-hover:scale-[1.03]"
+                      className={item.id === 'watch'
+                        ? 'mx-auto h-full w-auto max-w-full object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-[1.03]'
+                        : 'h-full w-full rounded-[18px] object-contain transition-transform duration-500 group-hover:scale-[1.03]'
+                      }
                     />
                   )}
                 </div>
