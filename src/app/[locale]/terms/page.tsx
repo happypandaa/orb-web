@@ -7,7 +7,7 @@ import Link from 'next/link';
 const termsContent: Record<Locale, { title: string; lastUpdated: string; sections: { heading: string; body: string[] }[] }> = {
   zh: {
     title: '使用条款',
-    lastUpdated: '最后更新：2026 年 3 月 25 日',
+    lastUpdated: '最后更新：2026 年 8 月 17 日',
     sections: [
       {
         heading: '接受条款',
@@ -52,6 +52,18 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
         ]
       },
       {
+        heading: '自动续订订阅与付款',
+        body: [
+          'OrbNote Pro 通过 Apple App Store 提供月度和年度自动续订订阅。具体订阅周期、价格、当地币种以及可用的免费试用或优惠，将在您确认购买前显示，并可能因国家或地区而异。',
+          '确认购买后，费用将从您的 Apple 账户中扣除。除非您在当前订阅周期结束前至少 24 小时取消订阅，否则订阅将自动续订。Apple 会在当前订阅周期结束前 24 小时内，按购买页面显示的续订价格向您的账户收取费用。',
+          '您可以随时前往 Apple 账户的“订阅”设置管理或取消订阅。删除 OrbNote 不会自动取消订阅。取消后，您仍可在已付费周期结束前继续使用 OrbNote Pro。',
+          '如果我们提供免费试用或促销优惠，具体期限和条件以购买时显示的信息为准。除非您在试用或优惠期结束前取消，否则订阅将按购买页面显示的价格自动续订。',
+          '付款、账单争议和退款由 Apple 根据其政策及适用法律处理。您可以使用应用内的“恢复购买”功能，在符合条件的设备上恢复有效订阅。',
+          '通过 App Store 进行的购买还受 Apple Media Services 条款和 Apple 标准最终用户许可协议约束。本使用条款是对这些条款的补充。',
+          'Apple 标准最终用户许可协议：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'
+        ]
+      },
+      {
         heading: '知识产权',
         body: [
           '本应用及其原始内容、功能和设计均为 OrbNote 的知识产权，受版权法和其他知识产权法保护。',
@@ -89,7 +101,7 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
   },
   en: {
     title: 'Terms of Use',
-    lastUpdated: 'Last updated: March 25, 2026',
+    lastUpdated: 'Last updated: August 17, 2026',
     sections: [
       {
         heading: 'Acceptance of terms',
@@ -134,6 +146,18 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
         ]
       },
       {
+        heading: 'Auto-renewable subscriptions and billing',
+        body: [
+          'OrbNote Pro is available through monthly and annual auto-renewable subscriptions purchased through the Apple App Store. The exact subscription period, price, local currency, and any available free trial or promotional offer are shown before you confirm a purchase and may vary by country or region.',
+          'Payment is charged to your Apple Account when you confirm the purchase. Unless you cancel at least 24 hours before the end of the current subscription period, your subscription renews automatically. Apple charges your account for renewal within 24 hours before the end of the current period at the renewal price shown on the purchase screen.',
+          'You can manage or cancel your subscription at any time in the Subscriptions section of your Apple Account settings. Deleting OrbNote does not cancel your subscription. After cancellation, you can continue using OrbNote Pro until the end of the paid period.',
+          'If we offer a free trial or promotional offer, its duration and conditions are shown at purchase. Unless you cancel before the trial or promotional period ends, the subscription renews automatically at the price shown on the purchase screen.',
+          'Apple handles payments, billing disputes, and refunds under its policies and applicable law. You can use Restore Purchases in the App to restore an eligible active subscription on your devices.',
+          'Purchases made through the App Store are also subject to the Apple Media Services Terms and Apple\'s Standard End User License Agreement. These Terms of Use supplement those terms.',
+          'Apple Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'
+        ]
+      },
+      {
         heading: 'Intellectual property',
         body: [
           'The App and its original content, features, and design are the intellectual property of OrbNote and are protected by copyright and other intellectual property laws.',
@@ -171,7 +195,7 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
   },
   ja: {
     title: '利用規約',
-    lastUpdated: '最終更新日：2026年3月25日',
+    lastUpdated: '最終更新日：2026年8月17日',
     sections: [
       {
         heading: '規約への同意',
@@ -216,6 +240,18 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
         ]
       },
       {
+        heading: '自動更新サブスクリプションとお支払い',
+        body: [
+          'OrbNote Pro は、Apple App Store を通じて月額および年額の自動更新サブスクリプションとして提供されます。正確な期間、価格、現地通貨、利用可能な無料トライアルまたはプロモーションは、購入確定前に表示され、国や地域によって異なる場合があります。',
+          '購入を確定すると、Apple Account に請求されます。現在のサブスクリプション期間が終了する少なくとも 24 時間前までに解約しない限り、サブスクリプションは自動更新されます。Apple は現在の期間が終了する前の 24 時間以内に、購入画面に表示された更新価格で請求します。',
+          'サブスクリプションは、Apple Account 設定の「サブスクリプション」からいつでも管理または解約できます。OrbNote を削除してもサブスクリプションは解約されません。解約後も、支払い済み期間が終了するまでは OrbNote Pro を利用できます。',
+          '無料トライアルまたはプロモーションを提供する場合、その期間と条件は購入時に表示されます。トライアルまたはプロモーション期間の終了前に解約しない限り、購入画面に表示された価格で自動更新されます。',
+          '支払い、請求に関する問題、および返金は、Apple のポリシーと適用法に従って Apple が処理します。本アプリの「購入を復元」機能を使用して、対象となる有効なサブスクリプションをデバイス上で復元できます。',
+          'App Store を通じた購入には、Apple Media Services 利用規約および Apple の標準エンドユーザ使用許諾契約も適用されます。本利用規約は、それらの規約を補足するものです。',
+          'Apple 標準エンドユーザ使用許諾契約：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'
+        ]
+      },
+      {
         heading: '知的財産権',
         body: [
           '本アプリおよびそのオリジナルコンテンツ、機能、デザインは OrbNote の知的財産であり、著作権法その他の知的財産法によって保護されています。',
@@ -253,7 +289,7 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
   },
   ko: {
     title: '이용약관',
-    lastUpdated: '최종 업데이트: 2026년 3월 25일',
+    lastUpdated: '최종 업데이트: 2026년 8월 17일',
     sections: [
       {
         heading: '약관 동의',
@@ -298,6 +334,18 @@ const termsContent: Record<Locale, { title: string; lastUpdated: string; section
         ]
       },
       {
+        heading: '자동 갱신 구독 및 결제',
+        body: [
+          'OrbNote Pro는 Apple App Store를 통해 월간 및 연간 자동 갱신 구독으로 제공됩니다. 정확한 구독 기간, 가격, 현지 통화 및 이용 가능한 무료 체험이나 프로모션은 구매 확정 전에 표시되며 국가 또는 지역에 따라 달라질 수 있습니다.',
+          '구매를 확정하면 Apple Account로 결제됩니다. 현재 구독 기간이 끝나기 최소 24시간 전에 취소하지 않으면 구독이 자동으로 갱신됩니다. Apple은 현재 기간이 끝나기 전 24시간 이내에 구매 화면에 표시된 갱신 가격으로 계정에 청구합니다.',
+          'Apple Account 설정의 구독 항목에서 언제든지 구독을 관리하거나 취소할 수 있습니다. OrbNote를 삭제해도 구독은 취소되지 않습니다. 취소 후에도 이미 결제한 기간이 끝날 때까지 OrbNote Pro를 사용할 수 있습니다.',
+          '무료 체험 또는 프로모션을 제공하는 경우 기간과 조건은 구매 시 표시됩니다. 체험 또는 프로모션 기간이 끝나기 전에 취소하지 않으면 구매 화면에 표시된 가격으로 자동 갱신됩니다.',
+          '결제, 청구 분쟁 및 환불은 Apple의 정책과 관련 법률에 따라 Apple이 처리합니다. 앱의 구입 복원 기능을 사용하여 대상 기기에서 유효한 구독을 복원할 수 있습니다.',
+          'App Store를 통한 구매에는 Apple Media Services 이용 약관과 Apple 표준 최종 사용자 사용권 계약도 적용됩니다. 본 이용약관은 해당 약관을 보완합니다.',
+          'Apple 표준 최종 사용자 사용권 계약: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'
+        ]
+      },
+      {
         heading: '지적 재산권',
         body: [
           '본 앱과 그 원본 콘텐츠, 기능, 디자인은 OrbNote의 지적 재산이며 저작권법 및 기타 지적 재산권법의 보호를 받습니다.',
@@ -339,19 +387,34 @@ export default function TermsPage() {
   const { locale } = useLocale();
   const data = termsContent[locale];
 
-  function renderWithEmailLinks(text: string) {
-    const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,})/g;
-    const parts = text.split(emailRegex);
+  function renderWithLinks(text: string) {
+    const linkRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,})/g;
+    const parts = text.split(linkRegex);
     const emailTest = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
-    return parts.map((part, i) =>
-      emailTest.test(part) ? (
+    const urlTest = /^https?:\/\/[^\s]+$/;
+    return parts.map((part, i) => {
+      if (emailTest.test(part)) {
+        return (
         <a key={i} href={`mailto:${part}`} className="text-[#0066cc] hover:text-[#0055b3] underline transition-colors">
           {part}
         </a>
-      ) : (
-        part
-      )
-    );
+        );
+      }
+      if (urlTest.test(part)) {
+        return (
+          <a
+            key={i}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0066cc] hover:text-[#0055b3] underline transition-colors break-words"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
   }
 
   return (
@@ -378,7 +441,7 @@ export default function TermsPage() {
                     key={pIndex}
                     className="text-[15px] leading-relaxed text-[#424245]"
                   >
-                    {renderWithEmailLinks(paragraph)}
+                    {renderWithLinks(paragraph)}
                   </p>
                 ))}
               </div>
