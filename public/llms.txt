@@ -1,6 +1,16 @@
 # OrbNote
 
-OrbNote 3.0 is a conversational notebook for Apple devices. It helps people capture text, photos, voice, files, and checklists as messages, keep related context inside Threads, and organize content later when structure becomes useful.
+Capture first. Organize later.
+
+OrbNote 3.0 is a conversational notebook and personal inbox for Apple users. It helps people capture text, photos, voice, files, and checklists as messages, keep related context inside Threads, and add structure later when it becomes useful.
+
+## Product facts
+
+- Quick Jot is the built-in inbox for content that does not have a destination yet.
+- AI Organization is an optional OrbNote Pro feature. After capture, it can suggest a suitable Thread and explain why.
+- The user can accept or ignore an AI suggestion, or choose an automatic option in settings.
+- OrbNote is local-first and uses the user's own iCloud account to synchronize ordinary notes across supported Apple devices.
+- Selected Threads can be protected with a password in OrbNote Pro.
 
 ## Primary pages
 

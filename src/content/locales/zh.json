@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "OrbNote 3.0 - 先记录，再整理的对话式笔记",
-    "description": "把想法像消息一样先记下来，让文字、图片、语音、文件和清单共享上下文，再在真正有用时整理到合适的会话。",
+    "title": "OrbNote 3.0｜先记录，再整理",
+    "description": "OrbNote 是为 Apple 用户设计的对话式笔记与个人信息收件箱。文字、图片、语音、文件和清单都可以像消息一样先记下来，之后再整理。",
     "keywords": [
       "OrbNote",
       "笔记",
@@ -16,8 +16,8 @@
   },
   "sections": {
     "hero": {
-      "title": "先记录，在真正有用时再整理",
-      "description": "OrbNote 3.0 是一个对话式笔记本，让文字、图片、语音、文件和小任务在 iPhone、Mac、iPad 与 Apple Watch 之间自然延续。",
+      "title": "先记录，再整理",
+      "description": "OrbNote 是为 Apple 用户设计的对话式笔记本和个人信息收件箱。文字、图片、语音、文件和小任务，都可以像发消息一样自然记下。",
       "links": [
         {
           "text": "App Store 下载"
@@ -44,8 +44,8 @@
     },
     "features-intro": {
       "eyebrow": "OrbNote 3.0",
-      "title": "让一闪而过的想法，更平静地变成长期记忆",
-      "description": "先立即保存，再保留上下文、重新找到它，只在结构能够产生价值时才开始整理。"
+      "title": "还没想好放在哪里，就先放进一个收件箱",
+      "description": "立即保存想法、保留上下文，等结构真正能帮助记忆时，再开始整理。"
     },
     "quick-jot": {
       "eyebrow": "随手记 Quick Jot",
@@ -59,8 +59,8 @@
     },
     "ai-organization": {
       "eyebrow": "AI 智能整理 · Pro",
-      "title": "先保存，再让 AI 建议它属于哪个会话",
-      "description": "记录完成后，AI 智能整理可以建议合适的会话并说明原因。你可以采用、忽略，或使用自己在设置中选择的自动选项。",
+      "title": "你负责记录，AI 建议它属于哪个会话",
+      "description": "记录完成后，AI 智能整理可以建议合适的会话并说明原因。你可以采用、忽略，或在设置中选择由 OrbNote 自动处理。",
       "links": [
         {
           "text": "了解 AI 智能整理"
@@ -104,8 +104,8 @@
     },
     "ai-workflow": {
       "eyebrow": "3 步完成整理",
-      "title": "输入内容，AI 给建议，你再决定是否保存",
-      "description": "无论是一句话、截图、附件还是语音，OrbNote 都会先结合有限上下文，生成分组、会话、标题和正文建议。只有在你确认之后，内容才会真正写入长期笔记结构。"
+      "title": "输入内容，AI 给出建议，再按你的设置处理",
+      "description": "无论是一句话、截图、附件还是语音，OrbNote 都会结合有限上下文，生成分组、会话、标题和正文建议。你可以先确认、忽略，或启用自己选择的自动处理选项。"
     },
     "showcase": {
       "eyebrow": "你能得到什么",
@@ -143,7 +143,7 @@
     },
     "download": {
       "title": "开始使用 OrbNote 3.0",
-      "description": "先接住下一个想法，不必马上设计完整系统。等结构开始帮助记忆时，再进行整理。",
+      "description": "把下一个想法先像消息一样记下来。等结构开始帮助记忆时，再进行整理。",
       "links": [
         {
           "text": "App Store 下载"

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "OrbNote 3.0 - Capture First, Organize Later",
-    "description": "Capture thoughts as messages, keep text, photos, voice, files, and checklists together, then organize them into the right Thread when it becomes useful.",
+    "title": "OrbNote 3.0 — Capture First. Organize Later.",
+    "description": "OrbNote is a conversational inbox for Apple users. Capture text, photos, voice, files, and checklists as messages, then organize them when it helps.",
     "keywords": [
       "OrbNote",
       "notes",
@@ -16,8 +16,8 @@
   },
   "sections": {
     "hero": {
-      "title": "Capture first. Organize when it helps.",
-      "description": "OrbNote 3.0 is a conversational notebook for text, photos, voice, files, and small tasks—across iPhone, Mac, iPad, and Apple Watch.",
+      "title": "Capture first. Organize later.",
+      "description": "OrbNote is a conversational notebook and personal inbox for Apple users. Capture text, photos, voice, files, and small tasks as naturally as sending a message.",
       "links": [
         {
           "text": "Download on the App Store"
@@ -44,8 +44,8 @@
     },
     "features-intro": {
       "eyebrow": "OrbNote 3.0",
-      "title": "A calmer path from a fleeting thought to long-term memory",
-      "description": "Save the thought immediately, keep its context, find it again, and add structure only when structure creates value."
+      "title": "One inbox for everything you have not organized yet",
+      "description": "Save the thought immediately, keep its context, and add structure only when structure starts helping you remember."
     },
     "quick-jot": {
       "eyebrow": "Quick Jot",
@@ -59,8 +59,8 @@
     },
     "ai-organization": {
       "eyebrow": "AI Organization · Pro",
-      "title": "Save it first. Let AI suggest where it belongs.",
-      "description": "After capture, AI Organization can recommend a suitable Thread and explain why. Review the suggestion, ignore it, or use the automatic option you chose in settings.",
+      "title": "You capture it. AI suggests where it belongs.",
+      "description": "After capture, AI Organization can recommend a suitable Thread and explain why. You can accept the suggestion, ignore it, or let OrbNote handle it automatically when you choose that option in settings.",
       "links": [
         {
           "text": "How AI Organization works"
@@ -104,8 +104,8 @@
     },
     "ai-workflow": {
       "eyebrow": "3 steps to get organized",
-      "title": "You send the content, AI suggests the save, you decide whether to keep it",
-      "description": "Whether it is a short sentence, a screenshot, an attachment, or voice input, OrbNote uses limited context to suggest the right group, thread, title, and body. Nothing is written into your long-term note structure until you confirm."
+      "title": "You send the content, AI makes a suggestion, and your setting decides what happens next",
+      "description": "Whether it is a short sentence, a screenshot, an attachment, or voice input, OrbNote uses limited context to suggest the right group, Thread, title, and body. Review it first, ignore it, or enable your chosen automatic option."
     },
     "showcase": {
       "eyebrow": "What you actually get",
@@ -143,7 +143,7 @@
     },
     "download": {
       "title": "Start using OrbNote 3.0",
-      "description": "Capture the next thought without stopping to design a system first. Add structure when it starts helping you remember.",
+      "description": "Capture the next thought as a message. Add structure later, when it starts helping you remember.",
       "links": [
         {
           "text": "Download on the App Store"
